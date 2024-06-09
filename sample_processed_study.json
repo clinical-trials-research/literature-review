@@ -1,0 +1,405 @@
+{
+    "NCTId": "NCT00072579",
+    "OrgStudyId": "CCCWFU-23102",
+    "protocolSection.identificationModule.secondaryIdInfos": [
+        {
+            "SecondaryId": "CDR0000340983",
+            "SecondaryIdType": "REGISTRY",
+            "SecondaryIdDomain": "PDQ (Physician Data Query)"
+        },
+        {
+            "SecondaryId": "BRLX-02153"
+        },
+        {
+            "SecondaryId": "NCI-7350"
+        }
+    ],
+    "OrgFullName": "Wake Forest University Health Sciences",
+    "OrgClass": "OTHER",
+    "BriefTitle": "Sargramostim in Treating Patients With Chronic Phase Chronic Myelogenous Leukemia Who Are Not in Complete Cytogenetic Remission Following Initial Treatment",
+    "OfficialTitle": "Phase II Study of GM-CSF in Patients With Chronic Phase Chronic Myeloid Leukemia (CP-CML) Who Are Not in Complete Cytogenetic Remission After Initial Therapy",
+    "StatusVerifiedDate": "2013-06",
+    "OverallStatus": "COMPLETED",
+    "HasExpandedAccess": false,
+    "StartDate": "2003-05",
+    "PrimaryCompletionDate": "2006-04",
+    "PrimaryCompletionDateType": "ACTUAL",
+    "CompletionDate": "2007-12",
+    "CompletionDateType": "ACTUAL",
+    "StudyFirstSubmitDate": "2003-11-04",
+    "StudyFirstSubmitQCDate": "2003-11-04",
+    "StudyFirstPostDate": "2003-11-05",
+    "StudyFirstPostDateType": "ESTIMATED",
+    "LastUpdateSubmitDate": "2017-01-17",
+    "LastUpdatePostDate": "2017-01-19",
+    "LastUpdatePostDateType": "ESTIMATED",
+    "ResponsiblePartyType": "SPONSOR",
+    "LeadSponsorName": "Wake Forest University Health Sciences",
+    "LeadSponsorClass": "OTHER",
+    "protocolSection.sponsorCollaboratorsModule.collaborators": [
+        {
+            "CollaboratorName": "National Cancer Institute (NCI)",
+            "CollaboratorClass": "NIH"
+        }
+    ],
+    "BriefSummary": "RATIONALE: Colony-stimulating factors, such as sargramostim, may increase the number of immune cells found in bone marrow or peripheral blood and may bring about complete remission in patients who have chronic phase chronic myelogenous leukemia.\n\nPURPOSE: This phase II trial is studying sargramostim to see how well it works in treating patients with chronic phase chronic myelogenous leukemia that is not in complete cytogenetic remission after initial treatment.",
+    "DetailedDescription": "OBJECTIVES:\n\n* Determine the efficacy and safety of sargramostim (GM-CSF) by cytogenetic examination of the bone marrow in patients with chronic phase chronic myelogenous leukemia who are not in complete cytogenetic remission after initial therapy.\n\nOUTLINE: Patients receive sargramostim (GM-CSF) subcutaneously daily for 3 months in the absence of disease progression or unacceptable toxicity. Patients achieving no response receive GM-CSF for an additional 3 months. Patients failing to achieve a partial response or better after the second course of GM-CSF are removed from the study. Patients achieving a partial response after the first or second course of GM-CSF continue to receive GM-CSF for an additional 9 months. Patients are then re-evaluated. Patients achieving a complete cytologic response at 9 months then receive GM-CSF 3 times weekly in the absence of disease progression or unacceptable toxicity.\n\nPatients are followed every 2 weeks.\n\nPROJECTED ACCRUAL: A total of 9-24 patients will be accrued for this study within 3 years.",
+    "Condition": [
+        "Leukemia"
+    ],
+    "Keyword": [
+        "chronic phase chronic myelogenous leukemia",
+        "chronic myelogenous leukemia, BCR-ABL1 positive"
+    ],
+    "StudyType": "INTERVENTIONAL",
+    "Phase": [
+        "PHASE2"
+    ],
+    "DesignPrimaryPurpose": "TREATMENT",
+    "DesignMasking": "NONE",
+    "protocolSection.armsInterventionsModule.interventions": [
+        {
+            "InterventionType": "BIOLOGICAL",
+            "InterventionName": "sargramostim"
+        }
+    ],
+    "protocolSection.outcomesModule.primaryOutcomes": [
+        {
+            "PrimaryOutcomeMeasure": "Cytogenetic response (complete and partial)"
+        }
+    ],
+    "protocolSection.outcomesModule.secondaryOutcomes": [
+        {
+            "SecondaryOutcomeMeasure": "Toxicity as assessed by the Expanded Common Toxicity Criteria v2.0"
+        },
+        {
+            "SecondaryOutcomeMeasure": "Time to progression"
+        },
+        {
+            "SecondaryOutcomeMeasure": "Survival"
+        }
+    ],
+    "EligibilityCriteria": "DISEASE CHARACTERISTICS:\n\n* Histologically confirmed chronic phase chronic myelogenous leukemia (CML)\n\n  * Presence of t(9;22)(q34;q11) with at least 20 cells examined in metaphase by cytogenetic examination of the bone marrow\n* Complete hematologic remission during prior therapy\\* as seen on 2 separate blood count analyses, defined by the following:\n\n  * WBC no greater than 10,000/mm\\^3 AND platelet count no greater than 450,000/mm\\^3\n  * Disappearance of all signs and symptoms of disease, including palpable splenomegaly\n  * Normal differential counts (i.e., absence of blasts, promyelocytes, myelocytes, and metamyelocytes) NOTE: \\*Continuation of therapy that led to complete hematologic remission is required during study participation\n* Persistent cytogenetic disease despite 12 months of prior imatinib mesylate therapy, which may have included a trial dose-escalation OR intolerant of imatinib mesylate at a dose greater than 400 mg/day\n* Not in complete cytogenetic remission within 30 days of study entry\n\n  * Persistent Philadelphia chromosome by bone marrow exam\n\nPATIENT CHARACTERISTICS:\n\nAge\n\n* 18 and over\n\nPerformance status\n\n* ECOG 0-2\n\nLife expectancy\n\n* More than 6 months\n\nHematopoietic\n\n* See Disease Characteristics\n\nHepatic\n\n* Not specified\n\nRenal\n\n* Not specified\n\nOther\n\n* Not pregnant or nursing\n* Fertile patients must use effective contraception\n* No uncontrolled active infective\n* No serious medical or psychiatric illness that would prevent giving informed consent or limit survival to less than 6 months\n* No other malignancy not in remission except curatively treated basal cell skin cancer or carcinoma in situ of the cervix\n\nPRIOR CONCURRENT THERAPY:\n\nBiologic therapy\n\n* Prior sargramostim (GM-CSF) allowed\n* Prior interferon alfa for CML allowed\n* No prior stem cell transplantation\n* Concurrent interferon alfa\\* for CML allowed NOTE: \\*No dose increase during study participation\n\nChemotherapy\n\n* At least 4 weeks since prior chemotherapy\n\nEndocrine therapy\n\n* Not specified\n\nRadiotherapy\n\n* At least 4 weeks since prior radiotherapy\n* No concurrent radiotherapy\n\nSurgery\n\n* At least 4 weeks since prior surgery\n\nOther\n\n* Prior imatinib mesylate for CML allowed\n* No other concurrent medication for CML\n* Concurrent imatinib mesylate\\* for CML allowed NOTE: \\*No dose increase during study participation",
+    "HealthyVolunteers": false,
+    "Sex": "ALL",
+    "MinimumAge": "18 Years",
+    "MaximumAge": "120 Years",
+    "StdAge": [
+        "ADULT",
+        "OLDER_ADULT"
+    ],
+    "protocolSection.contactsLocationsModule.overallOfficials": [
+        {
+            "OverallOfficialName": "Istvan Molnar, MD",
+            "OverallOfficialAffiliation": "Wake Forest University Health Sciences",
+            "OverallOfficialRole": "STUDY_CHAIR"
+        },
+        {
+            "OverallOfficialName": "Bayard L. Powell, MD",
+            "OverallOfficialAffiliation": "Wake Forest University Health Sciences"
+        }
+    ],
+    "protocolSection.contactsLocationsModule.locations": [
+        {
+            "LocationFacility": "CCOP - Western Regional, Arizona",
+            "LocationCity": "Phoenix",
+            "LocationState": "Arizona",
+            "LocationZip": "85006-2726",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "CCOP - Bay Area Tumor Institute",
+            "LocationCity": "Oakland",
+            "LocationState": "California",
+            "LocationZip": "94609-3305",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "CCOP - Mount Sinai Medical Center",
+            "LocationCity": "Miami Beach",
+            "LocationState": "Florida",
+            "LocationZip": "33140",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "Regional Radiation Oncology Center at Rome",
+            "LocationCity": "Rome",
+            "LocationState": "Georgia",
+            "LocationZip": "30165",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "CCOP - Central Illinois",
+            "LocationCity": "Decatur",
+            "LocationState": "Illinois",
+            "LocationZip": "62526",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "Kentuckiana Cancer Institute, PLLC",
+            "LocationCity": "Louisville",
+            "LocationState": "Kentucky",
+            "LocationZip": "40202",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "MBCCOP - LSU Health Sciences Center",
+            "LocationCity": "New Orleans",
+            "LocationState": "Louisiana",
+            "LocationZip": "70112",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "Alamance Cancer Center",
+            "LocationCity": "Burlington",
+            "LocationState": "North Carolina",
+            "LocationZip": "27216",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "Hugh Chatham Memorial Hospital",
+            "LocationCity": "Elkin",
+            "LocationState": "North Carolina",
+            "LocationZip": "28621",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "Southeastern Medical Oncology Center",
+            "LocationCity": "Goldsboro",
+            "LocationState": "North Carolina",
+            "LocationZip": "27534-9479",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "Brody School of Medicine at East Carolina University",
+            "LocationCity": "Greenville",
+            "LocationState": "North Carolina",
+            "LocationZip": "27858",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "Comprehensive Cancer Center at Wake Forest University",
+            "LocationCity": "Winston-Salem",
+            "LocationState": "North Carolina",
+            "LocationZip": "27157-1096",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "CCOP - Columbus",
+            "LocationCity": "Columbus",
+            "LocationState": "Ohio",
+            "LocationZip": "43206",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "Cancer Centers of the Carolinas - Eastside",
+            "LocationCity": "Greenville",
+            "LocationState": "South Carolina",
+            "LocationZip": "29615",
+            "LocationCountry": "United States"
+        },
+        {
+            "LocationFacility": "CCOP - Upstate Carolina",
+            "LocationCity": "Spartanburg",
+            "LocationState": "South Carolina",
+            "LocationZip": "29303",
+            "LocationCountry": "United States"
+        }
+    ],
+    "VersionHolder": "2024-06-07",
+    "derivedSection.conditionBrowseModule.meshes": [
+        {
+            "ConditionMeshId": "D000007938",
+            "ConditionMeshTerm": "Leukemia"
+        },
+        {
+            "ConditionMeshId": "D000015464",
+            "ConditionMeshTerm": "Leukemia, Myelogenous, Chronic, BCR-ABL Positive"
+        },
+        {
+            "ConditionMeshId": "D000015466",
+            "ConditionMeshTerm": "Leukemia, Myeloid, Chronic-Phase"
+        }
+    ],
+    "derivedSection.conditionBrowseModule.ancestors": [
+        {
+            "ConditionAncestorId": "D000009370",
+            "ConditionAncestorTerm": "Neoplasms by Histologic Type"
+        },
+        {
+            "ConditionAncestorId": "D000009369",
+            "ConditionAncestorTerm": "Neoplasms"
+        },
+        {
+            "ConditionAncestorId": "D000006402",
+            "ConditionAncestorTerm": "Hematologic Diseases"
+        },
+        {
+            "ConditionAncestorId": "D000007951",
+            "ConditionAncestorTerm": "Leukemia, Myeloid"
+        },
+        {
+            "ConditionAncestorId": "D000009196",
+            "ConditionAncestorTerm": "Myeloproliferative Disorders"
+        },
+        {
+            "ConditionAncestorId": "D000001855",
+            "ConditionAncestorTerm": "Bone Marrow Diseases"
+        },
+        {
+            "ConditionAncestorId": "D000002908",
+            "ConditionAncestorTerm": "Chronic Disease"
+        },
+        {
+            "ConditionAncestorId": "D000020969",
+            "ConditionAncestorTerm": "Disease Attributes"
+        },
+        {
+            "ConditionAncestorId": "D000010335",
+            "ConditionAncestorTerm": "Pathologic Processes"
+        }
+    ],
+    "derivedSection.conditionBrowseModule.browseLeaves": [
+        {
+            "ConditionBrowseLeafId": "M10945",
+            "ConditionBrowseLeafName": "Leukemia",
+            "ConditionBrowseLeafAsFound": "Leukemia",
+            "ConditionBrowseLeafRelevance": "HIGH"
+        },
+        {
+            "ConditionBrowseLeafId": "M10955",
+            "ConditionBrowseLeafName": "Leukemia, Myeloid",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "M18123",
+            "ConditionBrowseLeafName": "Leukemia, Myelogenous, Chronic, BCR-ABL Positive",
+            "ConditionBrowseLeafAsFound": "Chronic myelogenous leukemia",
+            "ConditionBrowseLeafRelevance": "HIGH"
+        },
+        {
+            "ConditionBrowseLeafId": "M18125",
+            "ConditionBrowseLeafName": "Leukemia, Myeloid, Chronic-Phase",
+            "ConditionBrowseLeafAsFound": "Chronic phase chronic myelogenous leukemia",
+            "ConditionBrowseLeafRelevance": "HIGH"
+        },
+        {
+            "ConditionBrowseLeafId": "M12315",
+            "ConditionBrowseLeafName": "Neoplasms by Histologic Type",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "M9490",
+            "ConditionBrowseLeafName": "Hematologic Diseases",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "M12149",
+            "ConditionBrowseLeafName": "Myeloproliferative Disorders",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "M5134",
+            "ConditionBrowseLeafName": "Bone Marrow Diseases",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "M6147",
+            "ConditionBrowseLeafName": "Chronic Disease",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "M22700",
+            "ConditionBrowseLeafName": "Disease Attributes",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "T3995",
+            "ConditionBrowseLeafName": "Myeloid Leukemia",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "T1303",
+            "ConditionBrowseLeafName": "Chronic Graft Versus Host Disease",
+            "ConditionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "ConditionBrowseLeafId": "T1309",
+            "ConditionBrowseLeafName": "Chronic Myeloid Leukemia",
+            "ConditionBrowseLeafAsFound": "Chronic myelogenous leukemia",
+            "ConditionBrowseLeafRelevance": "HIGH"
+        },
+        {
+            "ConditionBrowseLeafId": "T1311",
+            "ConditionBrowseLeafName": "Chronic Myeloproliferative Disorders",
+            "ConditionBrowseLeafRelevance": "LOW"
+        }
+    ],
+    "derivedSection.conditionBrowseModule.browseBranches": [
+        {
+            "ConditionBrowseBranchAbbrev": "BC04",
+            "ConditionBrowseBranchName": "Neoplasms"
+        },
+        {
+            "ConditionBrowseBranchAbbrev": "BC15",
+            "ConditionBrowseBranchName": "Blood and Lymph Conditions"
+        },
+        {
+            "ConditionBrowseBranchAbbrev": "All",
+            "ConditionBrowseBranchName": "All Conditions"
+        },
+        {
+            "ConditionBrowseBranchAbbrev": "BC23",
+            "ConditionBrowseBranchName": "Symptoms and General Pathology"
+        },
+        {
+            "ConditionBrowseBranchAbbrev": "Rare",
+            "ConditionBrowseBranchName": "Rare Diseases"
+        }
+    ],
+    "derivedSection.interventionBrowseModule.meshes": [
+        {
+            "InterventionMeshId": "C000081222",
+            "InterventionMeshTerm": "Sargramostim"
+        }
+    ],
+    "derivedSection.interventionBrowseModule.ancestors": [
+        {
+            "InterventionAncestorId": "D000007155",
+            "InterventionAncestorTerm": "Immunologic Factors"
+        },
+        {
+            "InterventionAncestorId": "D000045505",
+            "InterventionAncestorTerm": "Physiological Effects of Drugs"
+        }
+    ],
+    "derivedSection.interventionBrowseModule.browseLeaves": [
+        {
+            "InterventionBrowseLeafId": "M257633",
+            "InterventionBrowseLeafName": "Molgramostim",
+            "InterventionBrowseLeafRelevance": "LOW"
+        },
+        {
+            "InterventionBrowseLeafId": "M219218",
+            "InterventionBrowseLeafName": "Sargramostim",
+            "InterventionBrowseLeafAsFound": "Spinal Cord",
+            "InterventionBrowseLeafRelevance": "HIGH"
+        },
+        {
+            "InterventionBrowseLeafId": "M10201",
+            "InterventionBrowseLeafName": "Immunologic Factors",
+            "InterventionBrowseLeafRelevance": "LOW"
+        }
+    ],
+    "derivedSection.interventionBrowseModule.browseBranches": [
+        {
+            "InterventionBrowseBranchAbbrev": "ANeo",
+            "InterventionBrowseBranchName": "Antineoplastic Agents"
+        },
+        {
+            "InterventionBrowseBranchAbbrev": "All",
+            "InterventionBrowseBranchName": "All Drugs and Chemicals"
+        }
+    ],
+    "HasResults": false
+}
