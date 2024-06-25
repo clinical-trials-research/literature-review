@@ -1,89 +1,174 @@
-import os
+import sqlite3
 
-import httpx
-from dotenv import load_dotenv
-from pymongo import MongoClient
+COMMAND = """
+CREATE TABLE Study (
+    NCTId TEXT PRIMARY KEY,
+    OrgStudyId TEXT,
+    OrgFullName TEXT,
+    OrgClass TEXT,
+    BriefTitle TEXT,
+    OfficialTitle TEXT,
+    StatusVerifiedDate DATE,
+    OverallStatus TEXT,
+    HasExpandedAccess BOOLEAN,
+    StartDate DATE,
+    PrimaryCompletionDate DATE,
+    PrimaryCompletionDateType TEXT,
+    CompletionDate DATE,
+    CompletionDateType TEXT,
+    StudyFirstSubmitDate DATE,
+    StudyFirstSubmitQCDate DATE,
+    StudyFirstPostDate DATE,
+    StudyFirstPostDateType TEXT,
+    LastUpdateSubmitDate DATE,
+    LastUpdatePostDate DATE,
+    LastUpdatePostDateType TEXT,
+    ResponsiblePartyType TEXT,
+    LeadSponsorName TEXT,
+    LeadSponsorClass TEXT,
+    BriefSummary TEXT,
+    DetailedDescription TEXT,
+    StudyType TEXT,
+    DesignPrimaryPurpose TEXT,
+    DesignMasking TEXT,
+    EligibilityCriteria TEXT,
+    HealthyVolunteers BOOLEAN,
+    Sex TEXT,
+    MinimumAge TEXT,
+    MaximumAge TEXT,
+    VersionHolder DATE,
+    HasResults BOOLEAN
+);
 
-load_dotenv()
+CREATE TABLE SecondaryIdInfos (
+    SecondaryId TEXT PRIMARY KEY,
+    NCTId TEXT,
+    SecondaryIdType TEXT,
+    SecondaryIdDomain TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-API_BASE = "https://clinicaltrials.gov/api/v2"
-API_STUDIES = API_BASE + "/studies"
-API_STUDY_SIZES = API_BASE + "/stats/size"
-API_FIELD_VALUES = API_BASE + "/stats/field/values"
-CONNECTION_STRING = os.getenv("CONNECTION_STRING")
+CREATE TABLE Collaborators (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    CollaboratorName TEXT,
+    CollaboratorClass TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
+CREATE TABLE Condition (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    Condition TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-def studies_generator(num_studies=1000):
-    """
-    Creates a generator to retrieve studies with every call.
+CREATE TABLE Keyword (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    Keyword TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-    Args:
-        num_studies (int, optional): The number of studies to retrieve with
-                                     each call. Defaults to 1000.
+CREATE TABLE Phase (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    Phase TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-    Yields:
-        list[dict]: A list of studies, where each study is represented by a
-                    dictionary mapping the study's field to its value.
-    """
-    params = {"pageSize": str(num_studies)}
+CREATE TABLE Interventions (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    InterventionType TEXT,
+    InterventionName TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-    with httpx.Client() as client:
-        response = client.get(API_STUDIES, params=params)
-        response.raise_for_status()
-        data = response.json()
-        next_page_token = data.get("nextPageToken")
+CREATE TABLE PrimaryOutcomes (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    PrimaryOutcomeMeasure TEXT,
+    PrimaryOutcomeDescription TEXT,
+    PrimaryOutcomeTimeFrame TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-        while next_page_token:
-            yield data.get("studies", [])
-            params["pageToken"] = next_page_token
-            response = client.get(API_STUDIES, params=params)
-            response.raise_for_status()
-            data = response.json()
-            next_page_token = data.get("nextPageToken")
+CREATE TABLE SecondaryOutcomes (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    SecondaryOutcomeMeasure TEXT,
+    SecondaryOutcomeDescription TEXT,
+    SecondaryOutcomeTimeFrame TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
+CREATE TABLE OverallOfficials (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    OverallOfficialName TEXT,
+    OverallOfficialAffiliation TEXT,
+    OverallOfficialRole TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-def process_study(data, field_to_piece, _parent_key=""):
-    """
-    Process each clinical trial study by flattening its structure and making it
-    such that each field is represented by its more concise piece name.
+CREATE TABLE Locations (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    LocationFacility TEXT,
+    LocationCity TEXT,
+    LocationState TEXT,
+    LocationZip TEXT,
+    LocationCountry TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-    Args:
-        data (dict): Dictionary to flatten.
-        field_to_piece (dict): Dictionary that maps a field's name to its
-                               shortened piece name.
-        _parent_key (str): Used internally to keep track of the current key name.
+CREATE TABLE Meshes (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    ConditionMeshId TEXT,
+    ConditionMeshTerm TEXT,
+    InterventionMeshId TEXT,
+    InterventionMeshTerm TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-    Returns:
-        dict: Newly processed study.
-    """
-    flattened = {}
-    for key, value in data.items():
-        new_key = f"{_parent_key}.{key}" if _parent_key else key
-        if new_key in field_to_piece:
-            piece_name = field_to_piece[new_key]
-            flattened[piece_name] = value
-        elif isinstance(value, dict):
-            flattened |= process_study(value, field_to_piece, new_key)
-        elif isinstance(value, list) and all(isinstance(i, dict) for i in value):
-            flattened[new_key] = [
-                process_study(i, field_to_piece, new_key) for i in value
-            ]
-    return flattened
+CREATE TABLE Ancestors (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    ConditionAncestorId TEXT,
+    ConditionAncestorTerm TEXT,
+    InterventionAncestorId TEXT,
+    InterventionAncestorTerm TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
+CREATE TABLE BrowseLeaves (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    ConditionBrowseLeafId TEXT,
+    ConditionBrowseLeafName TEXT,
+    ConditionBrowseLeafAsFound TEXT,
+    ConditionBrowseLeafRelevance TEXT,
+    InterventionBrowseLeafId TEXT,
+    InterventionBrowseLeafName TEXT,
+    InterventionBrowseLeafRelevance TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
 
-field_to_piece = {}
-response = httpx.get(API_FIELD_VALUES)
-response.raise_for_status()
-for field in response.json():
-    field_to_piece[field["field"]] = field["piece"]
+CREATE TABLE BrowseBranches (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
+    ConditionBrowseBranchAbbrev TEXT,
+    ConditionBrowseBranchName TEXT,
+    InterventionBrowseBranchAbbrev TEXT,
+    InterventionBrowseBranchName TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
+"""
 
-mongo_client = MongoClient(CONNECTION_STRING)
-database = mongo_client["clinical_trials"]
-database_collection = database["trials"]
-
-studies = studies_generator(1)
-for study in next(studies):
-    processed_study = process_study(study, field_to_piece)
-    database_collection.insert_one(processed_study)
-
-mongo_client.close()
+connection = sqlite3.connect("./clinical_trials.db")
+cursor = connection.cursor()
+cursor.executescript(COMMAND)
+connection.commit()
+connection.close()
