@@ -2,7 +2,7 @@ import sqlite3
 
 from litreview.studies import Studies
 
-study_fields = [
+study_fields = (
     "NCTId",
     "OrgStudyId",
     "OrgFullName",
@@ -39,7 +39,72 @@ study_fields = [
     "MaximumAge",
     "VersionHolder",
     "HasResults",
-]
+)
+secondary_id_infos_fields = (
+    "SecondaryId",
+    "SecondaryIdType",
+    "SecondaryIdDomain",
+)
+collaborators_fields = (
+    "CollaboratorName",
+    "CollaboratorClass",
+)
+condition_fields = ("Condition",)
+keyword_fields = ("Keyword",)
+phase_fields = ("Phase",)
+interventions_fields = (
+    "InterventionType",
+    "InterventionName",
+)
+primary_outcomes_fields = (
+    "PrimaryOutcomeMeasure",
+    "PrimaryOutcomeDescription",
+    "PrimaryOutcomeTimeFrame",
+)
+secondary_outcomes_fields = (
+    "SecondaryOutcomeMeasure",
+    "SecondaryOutcomeDescription",
+    "SecondaryOutcomeTimeFrame",
+)
+overall_officials_fields = (
+    "OverallOfficialName",
+    "OverallOfficialAffiliation",
+    "OveralOfficialRole",
+)
+locations_fields = (
+    "LocationFacility",
+    "LocationCity",
+    "LocationState",
+    "LocationZip",
+    "LocationCountry",
+)
+meshes_fields = (
+    "ConditionMeshId",
+    "ConditionMeshTerm",
+    "InterventionMeshId",
+    "InterventionMeshTerm",
+)
+ancestors_fields = (
+    "ConditionAncestorId",
+    "ConditionAncestorTerm",
+    "InterventionAncestorId",
+    "InterventionAncestorTerm",
+)
+browse_leaves_fields = (
+    "ConditionBrowseLeafId",
+    "ConditionBrowseLeafName",
+    "ConditionBrowseLeafAsFound",
+    "ConditionBrowseLeafRelevance",
+    "ConditionBrowseleafId",
+    "ConditionBrowseLeafName",
+    "InterventionBrowseLeafRelevance",
+)
+browse_branches_fields = (
+    "ConditionBrowseBranchAbbrev",
+    "ConditionBrowseBranchName",
+    "InterventionBrowseBranchAbbrev",
+    "InterventionBrowseBranchName",
+)
 
 
 def insert_study(cursor, study):
