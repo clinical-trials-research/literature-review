@@ -107,19 +107,36 @@ browse_branches_fields = (
 )
 
 
-def insert_study(cursor, study):
-    study_table = [study.get(i) for i in study_fields]
+def insert_query(table_name, fields):
+    return f'INSERT INTO {table_name} ({", ".join(fields)}) VALUES ({("?, " * len(fields)).rstrip(", ")})'
 
-    cursor.execute(
-        f'INSERT INTO Study ({", ".join(study_fields)}) VALUES ({("?, " * len(study_fields)).rstrip(", ")})',
-        study_table,
+
+def insert_field(cursor, data, table_name, fields, nctid):
+    for entry in data:
+        values = [nctid] + [entry.get(i) for i in fields]
+        cursor.execute(
+            f'INSERT INTO {table_name} ({"NCTId, " + ", ".join(fields)}) VALUES ({("?, " * (len(fields) + 1)).rstrip(", ")})',
+            values,
+        )
+
+
+def insert_study(cursor, study):
+    nctid = study.get("NCTId")
+    study_table = [study.get(i) for i in study_fields]
+    cursor.execute(insert_query("Study", study_fields), study_table)
+
+    insert_field(
+        cursor,
+        study.get("protocolSection.identificationModule.secondaryIdInfos"),
+        "SecondaryIdInfos",
+        secondary_id_infos_fields,
+        nctid,
     )
 
 
 studies = Studies(1)
 connection = sqlite3.connect("./clinical_trials.db")
 cursor = connection.cursor()
-
 
 for study in studies.get_studies():
     insert_study(cursor, study)
