@@ -2,136 +2,186 @@ import sqlite3
 
 from litreview.studies import Studies
 
-study_fields = (
-    "NCTId",
-    "OrgStudyId",
-    "OrgFullName",
-    "OrgClass",
-    "BriefTitle",
-    "OfficialTitle",
-    "StatusVerifiedDate",
-    "OverallStatus",
-    "HasExpandedAccess",
-    "StartDate",
-    "PrimaryCompletionDate",
-    "PrimaryCompletionDateType",
-    "CompletionDate",
-    "CompletionDateType",
-    "StudyFirstSubmitDate",
-    "StudyFirstSubmitQCDate",
-    "StudyFirstPostDate",
-    "StudyFirstPostDateType",
-    "LastUpdateSubmitDate",
-    "LastUpdatePostDate",
-    "LastUpdatePostDateType",
-    "ResponsiblePartyType",
-    "LeadSponsorName",
-    "LeadSponsorClass",
-    "BriefSummary",
-    "DetailedDescription",
-    "StudyType",
-    "DesignPrimaryPurpose",
-    "DesignMasking",
-    "EligibilityCriteria",
-    "HealthyVolunteers",
-    "Sex",
-    "MinimumAge",
-    "MaximumAge",
-    "VersionHolder",
-    "HasResults",
-)
-secondary_id_infos_fields = (
-    "SecondaryId",
-    "SecondaryIdType",
-    "SecondaryIdDomain",
-)
-collaborators_fields = (
-    "CollaboratorName",
-    "CollaboratorClass",
-)
-condition_fields = ("Condition",)
-keyword_fields = ("Keyword",)
-phase_fields = ("Phase",)
-interventions_fields = (
-    "InterventionType",
-    "InterventionName",
-)
-primary_outcomes_fields = (
-    "PrimaryOutcomeMeasure",
-    "PrimaryOutcomeDescription",
-    "PrimaryOutcomeTimeFrame",
-)
-secondary_outcomes_fields = (
-    "SecondaryOutcomeMeasure",
-    "SecondaryOutcomeDescription",
-    "SecondaryOutcomeTimeFrame",
-)
-overall_officials_fields = (
-    "OverallOfficialName",
-    "OverallOfficialAffiliation",
-    "OveralOfficialRole",
-)
-locations_fields = (
-    "LocationFacility",
-    "LocationCity",
-    "LocationState",
-    "LocationZip",
-    "LocationCountry",
-)
-meshes_fields = (
-    "ConditionMeshId",
-    "ConditionMeshTerm",
-    "InterventionMeshId",
-    "InterventionMeshTerm",
-)
-ancestors_fields = (
-    "ConditionAncestorId",
-    "ConditionAncestorTerm",
-    "InterventionAncestorId",
-    "InterventionAncestorTerm",
-)
-browse_leaves_fields = (
-    "ConditionBrowseLeafId",
-    "ConditionBrowseLeafName",
-    "ConditionBrowseLeafAsFound",
-    "ConditionBrowseLeafRelevance",
-    "ConditionBrowseleafId",
-    "ConditionBrowseLeafName",
-    "InterventionBrowseLeafRelevance",
-)
-browse_branches_fields = (
-    "ConditionBrowseBranchAbbrev",
-    "ConditionBrowseBranchName",
-    "InterventionBrowseBranchAbbrev",
-    "InterventionBrowseBranchName",
-)
-
-
-def insert_query(table_name, fields):
-    return f'INSERT INTO {table_name} ({", ".join(fields)}) VALUES ({("?, " * len(fields)).rstrip(", ")})'
-
-
-def insert_field(cursor, data, table_name, fields, nctid):
-    for entry in data:
-        values = [nctid] + [entry.get(i) for i in fields]
-        cursor.execute(
-            f'INSERT INTO {table_name} ({"NCTId, " + ", ".join(fields)}) VALUES ({("?, " * (len(fields) + 1)).rstrip(", ")})',
-            values,
-        )
+database_schema = {
+    "Study": [
+        "NCTId",
+        "OrgStudyId",
+        "OrgFullName",
+        "OrgClass",
+        "BriefTitle",
+        "OfficialTitle",
+        "StatusVerifiedDate",
+        "OverallStatus",
+        "HasExpandedAccess",
+        "StartDate",
+        "PrimaryCompletionDate",
+        "PrimaryCompletionDateType",
+        "CompletionDate",
+        "CompletionDateType",
+        "StudyFirstSubmitDate",
+        "StudyFirstSubmitQCDate",
+        "StudyFirstPostDate",
+        "StudyFirstPostDateType",
+        "LastUpdateSubmitDate",
+        "LastUpdatePostDate",
+        "LastUpdatePostDateType",
+        "ResponsiblePartyType",
+        "LeadSponsorName",
+        "LeadSponsorClass",
+        "BriefSummary",
+        "DetailedDescription",
+        "StudyType",
+        "DesignPrimaryPurpose",
+        "DesignMasking",
+        "EligibilityCriteria",
+        "HealthyVolunteers",
+        "Sex",
+        "MinimumAge",
+        "MaximumAge",
+        "VersionHolder",
+        "HasResults",
+    ],
+    "SecondaryIdInfos": [
+        "SecondaryId",
+        "NCTId",
+        "SecondaryIdType",
+        "SecondaryIdDomain",
+    ],
+    "Collaborators": ["NCTId", "CollaboratorName", "CollaboratorClass"],
+    "Condition": ["NCTId", "Condition"],
+    "Keyword": ["NCTId", "Keyword"],
+    "Phase": ["NCTId", "Phase"],
+    "Interventions": ["NCTId", "InterventionType", "InterventionName"],
+    "PrimaryOutcomes": [
+        "NCTId",
+        "PrimaryOutcomeMeasure",
+        "PrimaryOutcomeDescription",
+        "PrimaryOutcomeTimeFrame",
+    ],
+    "SecondaryOutcomes": [
+        "NCTId",
+        "SecondaryOutcomeMeasure",
+        "SecondaryOutcomeDescription",
+        "SecondaryOutcomeTimeFrame",
+    ],
+    "OverallOfficials": [
+        "NCTId",
+        "OverallOfficialName",
+        "OverallOfficialAffiliation",
+        "OverallOfficialRole",
+    ],
+    "Locations": [
+        "NCTId",
+        "LocationFacility",
+        "LocationCity",
+        "LocationState",
+        "LocationZip",
+        "LocationCountry",
+    ],
+    "ConditionMeshes": ["NCTId", "ConditionMeshId", "ConditionMeshTerm"],
+    "InterventionMeshes": ["NCTId", "InterventionMeshId", "InterventionMeshTerm"],
+    "ConditionAncestors": [
+        "NCTId",
+        "ConditionAncestorId",
+        "ConditionAncestorTerm",
+    ],
+    "InterventionAncestors": [
+        "NCTId",
+        "InterventionAncestorId",
+        "InterventionAncestorTerm",
+    ],
+    "ConditionBrowseLeaves": [
+        "NCTId",
+        "ConditionBrowseLeafId",
+        "ConditionBrowseLeafName",
+        "ConditionBrowseLeafAsFound",
+        "ConditionBrowseLeafRelevance",
+    ],
+    "InterventionBrowseLeaves": [
+        "NCTId",
+        "InterventionBrowseLeafId",
+        "InterventionBrowseLeafName",
+        "InterventionBrowseLeafAsFound",
+        "InterventionBrowseLeafRelevance",
+    ],
+    "ConditionBrowseBranches": [
+        "NCTId",
+        "ConditionBrowseBranchAbbrev",
+        "ConditionBrowseBranchName",
+    ],
+    "InterventionBrowseBranches": [
+        "NCTId",
+        "InterventionBrowseBranchAbbrev",
+        "InterventionBrowseBranchName",
+    ],
+}
 
 
 def insert_study(cursor, study):
-    nctid = study.get("NCTId")
-    study_table = [study.get(i) for i in study_fields]
-    cursor.execute(insert_query("Study", study_fields), study_table)
+    pass
+    # nctid = study.get("NCTId")
+    # study_table = [study.get(i) for i in study_fields]
+    # query = f'INSERT INTO Study ({", ".join(study_fields)}) VALUES ({("?, " * len(study_fields)).rstrip(", ")})'
+    # cursor.execute(query, study_table)
 
-    insert_field(
-        cursor,
-        study.get("protocolSection.identificationModule.secondaryIdInfos"),
-        "SecondaryIdInfos",
-        secondary_id_infos_fields,
-        nctid,
-    )
+    # def insert_field(data, table_name, fields):
+    #     for entry in data:
+    #         values = [nctid] + [entry.get(i) for i in fields]
+    #         cursor.execute(
+    #             f'INSERT INTO {table_name} ({"NCTId, " + ", ".join(fields)}) VALUES ({("?, " * (len(fields) + 1)).rstrip(", ")})',
+    #             values,
+    #         )
+
+    # insert_field(
+    #     study.get("protocolSection.identificationModule.secondaryIdInfos"),
+    #     "SecondaryIdInfos",
+    #     secondary_id_infos_fields,
+    # )
+    # insert_field(
+    #     study.get("protocolSection.sponsorCollaboratorsModule.collaborators"),
+    #     "Collaborators",
+    #     collaborators_fields,
+    # )
+    # insert_field(
+    #     study.get("protocolSection.armsInterventionsModule.interventions"),
+    #     "Interventions",
+    #     interventions_fields,
+    # )
+    # insert_field(
+    #     study.get("Condition"),
+    #     "Condition",
+    #     condition_fields,
+    # )
+    # insert_field(
+    #     study.get("Keyword"),
+    #     "Keyword",
+    #     keyword_fields,
+    # )
+    # insert_field(
+    #     study.get("Phase"),
+    #     "Phase",
+    #     phase_fields,
+    # )
+    # insert_field(
+    #     study.get("protocolSection.outcomesModule.primaryOutcomes"),
+    #     "PrimaryOutcomes",
+    #     primary_outcomes_fields,
+    # )
+    # insert_field(
+    #     study.get("protocolSection.outcomesModule.secondaryOutcomes"),
+    #     "SecondaryOutcomes",
+    #     secondary_outcomes_fields,
+    # )
+    # insert_field(
+    #     study.get("protocolSection.contactsLocationsModule.overallOfficials"),
+    #     "OverallOfficials",
+    #     overall_officials_fields,
+    # )
+    # insert_field(
+    #     study.get("protocolSection.contactsLocationsModule.locations"),
+    #     "Locations",
+    #     locations_fields,
+    # )
 
 
 studies = Studies(1)

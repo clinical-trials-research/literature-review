@@ -123,44 +123,69 @@ CREATE TABLE Locations (
     FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
 );
 
-CREATE TABLE Meshes (
+CREATE TABLE ConditionMeshes (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     NCTId TEXT,
     ConditionMeshId TEXT,
     ConditionMeshTerm TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
+
+CREATE TABLE InterventionMeshes (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
     InterventionMeshId TEXT,
     InterventionMeshTerm TEXT,
     FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
 );
 
-CREATE TABLE Ancestors (
+CREATE TABLE ConditionAncestors (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     NCTId TEXT,
     ConditionAncestorId TEXT,
     ConditionAncestorTerm TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
+
+CREATE TABLE InterventionAncestors (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
     InterventionAncestorId TEXT,
     InterventionAncestorTerm TEXT,
     FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
 );
 
-CREATE TABLE BrowseLeaves (
+CREATE TABLE ConditionBrowseLeaves (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     NCTId TEXT,
     ConditionBrowseLeafId TEXT,
     ConditionBrowseLeafName TEXT,
     ConditionBrowseLeafAsFound TEXT,
     ConditionBrowseLeafRelevance TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
+
+CREATE TABLE InterventionBrowseLeaves (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
     InterventionBrowseLeafId TEXT,
     InterventionBrowseLeafName TEXT,
+    InterventionBrowseLeafAsFound TEXT,
     InterventionBrowseLeafRelevance TEXT,
     FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
 );
 
-CREATE TABLE BrowseBranches (
+CREATE TABLE ConditionBrowseBranches (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     NCTId TEXT,
     ConditionBrowseBranchAbbrev TEXT,
     ConditionBrowseBranchName TEXT,
+    FOREIGN KEY (NCTId) REFERENCES Study(NCTId)
+);
+
+CREATE TABLE InterventionBrowseBranches (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NCTId TEXT,
     InterventionBrowseBranchAbbrev TEXT,
     InterventionBrowseBranchName TEXT,
     FOREIGN KEY (NCTId) REFERENCES Study(NCTId)

@@ -4,6 +4,26 @@ API_BASE = "https://clinicaltrials.gov/api/v2"
 API_STUDIES = API_BASE + "/studies"
 API_STUDY_SIZES = API_BASE + "/stats/size"
 API_FIELD_VALUES = API_BASE + "/stats/field/values"
+JSON_TO_TABLE = {
+    "protocolSection.identificationModule.secondaryIdInfos": "SecondaryIdInfos",
+    "protocolSection.sponsorCollaboratorsModule.collaborators": "Collaborators",
+    "Condition": "Condition",
+    "Keyword": "Keyword",
+    "Phase": "Phase",
+    "protocolSection.armsInterventionsModule.interventions": "Interventions",
+    "protocolSection.outcomesModule.primaryOutcomes": "PrimaryOutcomes",
+    "protocolSection.outcomesModule.secondaryOutcomes": "SecondaryOutcomes",
+    "protocolSection.contactsLocationsModule.overallOfficials": "OverallOfficials",
+    "protocolSection.contactsLocationsModule.locations": "Locations",
+    "derivedSection.conditionBrowseModule.meshes": "ConditionMeshes",
+    "derivedSection.interventionBrowseModule.meshes": "InterventionMeshes",
+    "derivedSection.conditionBrowseModule.ancestors": "ConditionAncestors",
+    "derivedSection.interventionBrowseModule.ancestors": "InterventionAncestors",
+    "derivedSection.conditionBrowseModule.browseLeaves": "ConditionBrowseLeaves",
+    "derivedSection.interventionBrowseModule.browseLeaves": "InterventionBrowseLeaves",
+    "derivedSection.conditionBrowseModule.browseBranches": "ConditionBrowseBranches",
+    "derivedSection.interventionBrowseModule.browseBranches": "InterventionBrowseBranches",
+}
 
 
 class Studies:
@@ -72,5 +92,6 @@ class Studies:
             elif isinstance(value, dict):
                 flattened |= self._process_study(value, new_key)
             elif isinstance(value, list) and all(isinstance(i, dict) for i in value):
-                flattened[new_key] = [self._process_study(i, new_key) for i in value]
+                table_key = JSON_TO_TABLE.get(new_key, new_key)
+                flattened[table_key] = [self._process_study(i, new_key) for i in value]
         return flattened
