@@ -1,6 +1,3 @@
-import sqlite3
-
-COMMAND = """
 CREATE TABLE
     Study (
         NCTId TEXT PRIMARY KEY,
@@ -54,8 +51,8 @@ CREATE TABLE
 
 CREATE TABLE
     SecondaryIdInfos (
-        NCTId TEXT,
         SecondaryId TEXT PRIMARY KEY,
+        NCTId TEXT,
         SecondaryIdType TEXT,
         SecondaryIdDomain TEXT,
         FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
@@ -136,7 +133,7 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    StudyReferences (
+    References (
         ID INT AUTO_INCREMENT PRIMARY KEY,
         NCTId TEXT,
         ReferencePMID TEXT,
@@ -220,10 +217,3 @@ CREATE TABLE
         InterventionBrowseBranchName TEXT,
         FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
     );
-"""
-
-connection = sqlite3.connect("./clinical_trials.db")
-cursor = connection.cursor()
-cursor.executescript(COMMAND)
-connection.commit()
-connection.close()

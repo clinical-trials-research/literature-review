@@ -2,75 +2,108 @@ import sqlite3
 
 from litreview.studies import Studies
 
-database_schema = {
-    "Study": [
-        "NCTId",
-        "OrgStudyId",
-        "OrgFullName",
-        "OrgClass",
-        "BriefTitle",
-        "OfficialTitle",
-        "StatusVerifiedDate",
-        "OverallStatus",
-        "HasExpandedAccess",
-        "StartDate",
-        "PrimaryCompletionDate",
-        "PrimaryCompletionDateType",
-        "CompletionDate",
-        "CompletionDateType",
-        "StudyFirstSubmitDate",
-        "StudyFirstSubmitQCDate",
-        "StudyFirstPostDate",
-        "StudyFirstPostDateType",
-        "LastUpdateSubmitDate",
-        "LastUpdatePostDate",
-        "LastUpdatePostDateType",
-        "ResponsiblePartyType",
-        "LeadSponsorName",
-        "LeadSponsorClass",
-        "BriefSummary",
-        "DetailedDescription",
-        "StudyType",
-        "DesignPrimaryPurpose",
-        "DesignMasking",
-        "EligibilityCriteria",
-        "HealthyVolunteers",
-        "Sex",
-        "MinimumAge",
-        "MaximumAge",
-        "VersionHolder",
-        "HasResults",
-    ],
+STUDY_TABLE = [
+    "NCTId",
+    "OrgStudyId",
+    "OrgFullName",
+    "OrgClass",
+    "BriefTitle",
+    "OfficialTitle",
+    "StatusVerifiedDate",
+    "OverallStatus",
+    "HasExpandedAccess",
+    "StartDate",
+    "PrimaryCompletionDate",
+    "PrimaryCompletionDateType",
+    "CompletionDate",
+    "CompletionDateType",
+    "StudyFirstSubmitDate",
+    "StudyFirstSubmitQCDate",
+    "StudyFirstPostDate",
+    "StudyFirstPostDateType",
+    "LastUpdateSubmitDate",
+    "LastUpdatePostDate",
+    "LastUpdatePostDateType",
+    "ResponsiblePartyType",
+    "LeadSponsorName",
+    "LeadSponsorClass",
+    "BriefSummary",
+    "DetailedDescription",
+    "StudyType",
+    "DesignAllocation",
+    "DesignPrimaryPurpose",
+    "DesignMasking",
+    "EnrollmentCount",
+    "EnrollmentType",
+    "EligibilityCriteria",
+    "HealthyVolunteers",
+    "Sex",
+    "MinimumAge",
+    "MaximumAge",
+    "VersionHolder",
+    "HasResults",
+    "OversightHasDMC",
+    "IsFDARegulatedDrug",
+    "IsFDARegulatedDevice",
+    "IPDSharing",
+    "Condition",
+    "Keyword",
+    "Phase",
+    "StdAge",
+]
+OTHER_TABLES = {
     "SecondaryIdInfos": [
         "SecondaryId",
         "NCTId",
         "SecondaryIdType",
         "SecondaryIdDomain",
     ],
-    "Collaborators": ["NCTId", "CollaboratorName", "CollaboratorClass"],
-    "Condition": ["NCTId", "Condition"],
-    "Keyword": ["NCTId", "Keyword"],
-    "Phase": ["NCTId", "Phase"],
-    "Interventions": ["NCTId", "InterventionType", "InterventionName"],
+    "ArmGroups": [
+        "ID",
+        "NCTId",
+        "ArmGroupLabel",
+        "ArmGroupType",
+        "ArmGroupDescription",
+        "ArmGroupInterventionName",
+    ],
+    "Collaborators": [
+        "ID",
+        "NCTId",
+        "CollaboratorName",
+        "CollaboratorClass",
+    ],
+    "Interventions": [
+        "ID",
+        "NCTId",
+        "InterventionType",
+        "InterventionName",
+        "InterventionDescription",
+        "InterventionArmGroupLabel",
+        "InterventionOtherName",
+    ],
     "PrimaryOutcomes": [
+        "ID",
         "NCTId",
         "PrimaryOutcomeMeasure",
         "PrimaryOutcomeDescription",
         "PrimaryOutcomeTimeFrame",
     ],
     "SecondaryOutcomes": [
+        "ID",
         "NCTId",
         "SecondaryOutcomeMeasure",
         "SecondaryOutcomeDescription",
         "SecondaryOutcomeTimeFrame",
     ],
     "OverallOfficials": [
+        "ID",
         "NCTId",
         "OverallOfficialName",
         "OverallOfficialAffiliation",
         "OverallOfficialRole",
     ],
     "Locations": [
+        "ID",
         "NCTId",
         "LocationFacility",
         "LocationCity",
@@ -78,19 +111,39 @@ database_schema = {
         "LocationZip",
         "LocationCountry",
     ],
-    "ConditionMeshes": ["NCTId", "ConditionMeshId", "ConditionMeshTerm"],
-    "InterventionMeshes": ["NCTId", "InterventionMeshId", "InterventionMeshTerm"],
+    "StudyReferences": [
+        "ID",
+        "NCTId",
+        "ReferencePMID",
+        "ReferenceType",
+        "ReferenceCitation",
+    ],
+    "ConditionMeshes": [
+        "ID",
+        "NCTId",
+        "ConditionMeshId",
+        "ConditionMeshTerm",
+    ],
+    "InterventionMeshes": [
+        "ID",
+        "NCTId",
+        "InterventionMeshId",
+        "InterventionMeshTerm",
+    ],
     "ConditionAncestors": [
+        "ID",
         "NCTId",
         "ConditionAncestorId",
         "ConditionAncestorTerm",
     ],
     "InterventionAncestors": [
+        "ID",
         "NCTId",
         "InterventionAncestorId",
         "InterventionAncestorTerm",
     ],
     "ConditionBrowseLeaves": [
+        "ID",
         "NCTId",
         "ConditionBrowseLeafId",
         "ConditionBrowseLeafName",
@@ -98,6 +151,7 @@ database_schema = {
         "ConditionBrowseLeafRelevance",
     ],
     "InterventionBrowseLeaves": [
+        "ID",
         "NCTId",
         "InterventionBrowseLeafId",
         "InterventionBrowseLeafName",
@@ -105,11 +159,13 @@ database_schema = {
         "InterventionBrowseLeafRelevance",
     ],
     "ConditionBrowseBranches": [
+        "ID",
         "NCTId",
         "ConditionBrowseBranchAbbrev",
         "ConditionBrowseBranchName",
     ],
     "InterventionBrowseBranches": [
+        "ID",
         "NCTId",
         "InterventionBrowseBranchAbbrev",
         "InterventionBrowseBranchName",
@@ -118,73 +174,26 @@ database_schema = {
 
 
 def insert_study(cursor, study):
-    pass
-    # nctid = study.get("NCTId")
-    # study_table = [study.get(i) for i in study_fields]
-    # query = f'INSERT INTO Study ({", ".join(study_fields)}) VALUES ({("?, " * len(study_fields)).rstrip(", ")})'
-    # cursor.execute(query, study_table)
+    nctid = study.get("NCTId")
+    values = [study.get(field) for field in STUDY_TABLE]
+    query = f'INSERT INTO Study ({", ".join(STUDY_TABLE)}) VALUES ({("?, " * len(STUDY_TABLE)).rstrip(", ")})'
+    cursor.execute(query, values)
 
-    # def insert_field(data, table_name, fields):
-    #     for entry in data:
-    #         values = [nctid] + [entry.get(i) for i in fields]
-    #         cursor.execute(
-    #             f'INSERT INTO {table_name} ({"NCTId, " + ", ".join(fields)}) VALUES ({("?, " * (len(fields) + 1)).rstrip(", ")})',
-    #             values,
-    #         )
+    def insert_field(table_name, fields):
+        table_values = study.get(table_name)
+        if table_values:
+            for entry in table_values:
+                values = [nctid] + [entry.get(i) for i in fields]
+                cursor.execute(
+                    f'INSERT INTO {table_name} ({"NCTId, " + ", ".join(fields)}) VALUES ({("?, " * (len(fields) + 1)).rstrip(", ")})',
+                    values,
+                )
 
-    # insert_field(
-    #     study.get("protocolSection.identificationModule.secondaryIdInfos"),
-    #     "SecondaryIdInfos",
-    #     secondary_id_infos_fields,
-    # )
-    # insert_field(
-    #     study.get("protocolSection.sponsorCollaboratorsModule.collaborators"),
-    #     "Collaborators",
-    #     collaborators_fields,
-    # )
-    # insert_field(
-    #     study.get("protocolSection.armsInterventionsModule.interventions"),
-    #     "Interventions",
-    #     interventions_fields,
-    # )
-    # insert_field(
-    #     study.get("Condition"),
-    #     "Condition",
-    #     condition_fields,
-    # )
-    # insert_field(
-    #     study.get("Keyword"),
-    #     "Keyword",
-    #     keyword_fields,
-    # )
-    # insert_field(
-    #     study.get("Phase"),
-    #     "Phase",
-    #     phase_fields,
-    # )
-    # insert_field(
-    #     study.get("protocolSection.outcomesModule.primaryOutcomes"),
-    #     "PrimaryOutcomes",
-    #     primary_outcomes_fields,
-    # )
-    # insert_field(
-    #     study.get("protocolSection.outcomesModule.secondaryOutcomes"),
-    #     "SecondaryOutcomes",
-    #     secondary_outcomes_fields,
-    # )
-    # insert_field(
-    #     study.get("protocolSection.contactsLocationsModule.overallOfficials"),
-    #     "OverallOfficials",
-    #     overall_officials_fields,
-    # )
-    # insert_field(
-    #     study.get("protocolSection.contactsLocationsModule.locations"),
-    #     "Locations",
-    #     locations_fields,
-    # )
+    for table_name, fields in OTHER_TABLES.items():
+        insert_field(table_name, fields)
 
 
-studies = Studies(1)
+studies = Studies(5)
 connection = sqlite3.connect("./clinical_trials.db")
 cursor = connection.cursor()
 

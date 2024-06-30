@@ -23,6 +23,8 @@ JSON_TO_TABLE = {
     "derivedSection.interventionBrowseModule.browseLeaves": "InterventionBrowseLeaves",
     "derivedSection.conditionBrowseModule.browseBranches": "ConditionBrowseBranches",
     "derivedSection.interventionBrowseModule.browseBranches": "InterventionBrowseBranches",
+    "protocolSection.armsInterventionsModule.armGroups": "ArmGroups",
+    "protocolSection.referencesModule.references": "StudyReferences",
 }
 
 
@@ -88,6 +90,8 @@ class Studies:
             new_key = f"{_parent_key}.{key}" if _parent_key else key
             if new_key in self._field_to_piece:
                 piece_name = self._field_to_piece[new_key]
+                if isinstance(value, list):
+                    value = ", ".join(value)
                 flattened[piece_name] = value
             elif isinstance(value, dict):
                 flattened |= self._process_study(value, new_key)
