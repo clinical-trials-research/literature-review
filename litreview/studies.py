@@ -29,13 +29,29 @@ JSON_TO_TABLE = {
 
 
 class Studies:
+    """
+    Provides an interface to access the ClinicalTrials API.
+    """
+
     def __init__(self, num_studies=1000):
         self.num_studies = num_studies
         self._field_to_piece = self._get_field_to_piece()
         self._studies = self._get_studies_generator()
 
     def get_studies(self):
-        return [self._process_study(study) for study in next(self._studies)]
+        """
+        Retrieve a list of normalized studies.
+        """
+        return [self._process_study(study) for study in next(self._studies, [])]
+
+    def get_total_studies(self):
+        """
+        Return the total number of studies at clinicaltrials.gov.
+        """
+        response = httpx.get(API_STUDY_SIZES)
+        response.raise_for_status()
+        data = response.json()
+        return data.get("totalStudies")
 
     def _get_studies_generator(self):
         """
@@ -66,6 +82,10 @@ class Studies:
                 next_page_token = data.get("nextPageToken")
 
     def _get_field_to_piece(self):
+        """
+        Retruns a dictionary which maps the field name to the more concise
+        piece name of clinical trials.
+        """
         field_to_piece = {}
         response = httpx.get(API_FIELD_VALUES)
         response.raise_for_status()

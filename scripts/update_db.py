@@ -1,6 +1,232 @@
 import sqlite3
 
+from tqdm import tqdm
+
 from litreview.studies import Studies
+
+UPDATE_DB_QUERY = """
+CREATE TABLE IF NOT EXISTS
+    Study (
+        NCTId TEXT PRIMARY KEY,
+        OrgStudyId TEXT,
+        OrgFullName TEXT,
+        OrgClass TEXT,
+        BriefTitle TEXT,
+        OfficialTitle TEXT,
+        StatusVerifiedDate DATE,
+        OverallStatus TEXT,
+        HasExpandedAccess BOOLEAN,
+        StartDate DATE,
+        PrimaryCompletionDate DATE,
+        PrimaryCompletionDateType TEXT,
+        CompletionDate DATE,
+        CompletionDateType TEXT,
+        StudyFirstSubmitDate DATE,
+        StudyFirstSubmitQCDate DATE,
+        StudyFirstPostDate DATE,
+        StudyFirstPostDateType TEXT,
+        LastUpdateSubmitDate DATE,
+        LastUpdatePostDate DATE,
+        LastUpdatePostDateType TEXT,
+        ResponsiblePartyType TEXT,
+        LeadSponsorName TEXT,
+        LeadSponsorClass TEXT,
+        BriefSummary TEXT,
+        DetailedDescription TEXT,
+        StudyType TEXT,
+        DesignAllocation TEXT,
+        DesignPrimaryPurpose TEXT,
+        DesignMasking TEXT,
+        EnrollmentCount INTEGER,
+        EnrollmentType INTEGER,
+        EligibilityCriteria TEXT,
+        HealthyVolunteers BOOLEAN,
+        Sex TEXT,
+        MinimumAge TEXT,
+        MaximumAge TEXT,
+        VersionHolder DATE,
+        HasResults BOOLEAN,
+        OversightHasDMC BOOLEAN,
+        IsFDARegulatedDrug BOOLEAN,
+        IsFDARegulatedDevice BOOLEAN,
+        IPDSharing TEXT,
+        Condition TEXT,
+        Keyword TEXT,
+        Phase TEXT,
+        StdAge TEXT,
+        DatePulled DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+CREATE TABLE IF NOT EXISTS
+    SecondaryIdInfos (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        SecondaryId TEXT,
+        SecondaryIdType TEXT,
+        SecondaryIdDomain TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    ArmGroups (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        ArmGroupLabel TEXT,
+        ArmGroupType TEXT,
+        ArmGroupDescription TEXT,
+        ArmGroupInterventionName TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    Collaborators (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        CollaboratorName TEXT,
+        CollaboratorClass TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    Interventions (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        InterventionType TEXT,
+        InterventionName TEXT,
+        InterventionDescription TEXT,
+        InterventionArmGroupLabel TEXT,
+        InterventionOtherName TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    PrimaryOutcomes (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        PrimaryOutcomeMeasure TEXT,
+        PrimaryOutcomeDescription TEXT,
+        PrimaryOutcomeTimeFrame TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    SecondaryOutcomes (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        SecondaryOutcomeMeasure TEXT,
+        SecondaryOutcomeDescription TEXT,
+        SecondaryOutcomeTimeFrame TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    OverallOfficials (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        OverallOfficialName TEXT,
+        OverallOfficialAffiliation TEXT,
+        OverallOfficialRole TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    Locations (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        LocationFacility TEXT,
+        LocationCity TEXT,
+        LocationState TEXT,
+        LocationZip TEXT,
+        LocationCountry TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    StudyReferences (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        ReferencePMID TEXT,
+        ReferenceType TEXT,
+        ReferenceCitation TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    ConditionMeshes (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        ConditionMeshId TEXT,
+        ConditionMeshTerm TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    InterventionMeshes (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        InterventionMeshId TEXT,
+        InterventionMeshTerm TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    ConditionAncestors (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        ConditionAncestorId TEXT,
+        ConditionAncestorTerm TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    InterventionAncestors (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        InterventionAncestorId TEXT,
+        InterventionAncestorTerm TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    ConditionBrowseLeaves (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        ConditionBrowseLeafId TEXT,
+        ConditionBrowseLeafName TEXT,
+        ConditionBrowseLeafAsFound TEXT,
+        ConditionBrowseLeafRelevance TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    InterventionBrowseLeaves (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        InterventionBrowseLeafId TEXT,
+        InterventionBrowseLeafName TEXT,
+        InterventionBrowseLeafAsFound TEXT,
+        InterventionBrowseLeafRelevance TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    ConditionBrowseBranches (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        ConditionBrowseBranchAbbrev TEXT,
+        ConditionBrowseBranchName TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+
+CREATE TABLE IF NOT EXISTS
+    InterventionBrowseBranches (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NCTId TEXT,
+        InterventionBrowseBranchAbbrev TEXT,
+        InterventionBrowseBranchName TEXT,
+        FOREIGN KEY (NCTId) REFERENCES Study (NCTId)
+    );
+"""
 
 STUDY_TABLE = [
     "NCTId",
@@ -53,8 +279,9 @@ STUDY_TABLE = [
 ]
 OTHER_TABLES = {
     "SecondaryIdInfos": [
-        "SecondaryId",
+        "ID",
         "NCTId",
+        "SecondaryId",
         "SecondaryIdType",
         "SecondaryIdDomain",
     ],
@@ -193,12 +420,18 @@ def insert_study(cursor, study):
         insert_field(table_name, fields)
 
 
-studies = Studies(5)
 connection = sqlite3.connect("./clinical_trials.db")
 cursor = connection.cursor()
+cursor.executescript(UPDATE_DB_QUERY)
 
-for study in studies.get_studies():
-    insert_study(cursor, study)
+studies = Studies()
+total_studies = studies.get_total_studies()
 
-connection.commit()
+with tqdm(total=total_studies, unit="studies") as pbar:
+    for _ in range((total_studies // 1000) + 1):
+        for study in studies.get_studies():
+            insert_study(cursor, study)
+            pbar.update(1)
+        connection.commit()
+
 connection.close()
