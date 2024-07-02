@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS
         OfficialTitle TEXT,
         StatusVerifiedDate DATE,
         OverallStatus TEXT,
+        LastKnownStatus TEXT,
         HasExpandedAccess BOOLEAN,
         StartDate DATE,
         PrimaryCompletionDate DATE,
