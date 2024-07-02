@@ -14,6 +14,8 @@ pipx install poetry
 ### Install Repo with Poetry
 
 ```bash
+git clone https://github.com/clinical-trials-research/literature-review.git
+cd literature-review
 poetry install
 ```
 
