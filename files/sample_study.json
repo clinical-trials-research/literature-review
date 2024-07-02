@@ -1,57 +1,46 @@
 {
     "protocolSection": {
         "identificationModule": {
-            "nctId": "NCT00072579",
+            "nctId": "NCT04175379",
             "orgStudyIdInfo": {
-                "id": "CCCWFU-23102"
+                "id": "4-2019-0904"
             },
-            "secondaryIdInfos": [
-                {
-                    "id": "CDR0000340983",
-                    "type": "REGISTRY",
-                    "domain": "PDQ (Physician Data Query)"
-                },
-                {
-                    "id": "BRLX-02153"
-                },
-                {
-                    "id": "NCI-7350"
-                }
-            ],
             "organization": {
-                "fullName": "Wake Forest University Health Sciences",
+                "fullName": "Yonsei University",
                 "class": "OTHER"
             },
-            "briefTitle": "Sargramostim in Treating Patients With Chronic Phase Chronic Myelogenous Leukemia Who Are Not in Complete Cytogenetic Remission Following Initial Treatment",
-            "officialTitle": "Phase II Study of GM-CSF in Patients With Chronic Phase Chronic Myeloid Leukemia (CP-CML) Who Are Not in Complete Cytogenetic Remission After Initial Therapy"
+            "briefTitle": "The Effect of Permissive Hypercapnia on Oxygenation and Post-operative Pulmonary Complication During One-lung Ventilation",
+            "officialTitle": "The Effect of Permissive Hypercapnia on Oxygenation and Post-operative Pulmonary Complication During One-lung Ventilation : Prospective, Randomized Controlled Study"
         },
         "statusModule": {
-            "statusVerifiedDate": "2013-06",
-            "overallStatus": "COMPLETED",
+            "statusVerifiedDate": "2019-12",
+            "overallStatus": "UNKNOWN",
+            "lastKnownStatus": "ENROLLING_BY_INVITATION",
             "expandedAccessInfo": {
                 "hasExpandedAccess": false
             },
             "startDateStruct": {
-                "date": "2003-05"
+                "date": "2019-11-25",
+                "type": "ACTUAL"
             },
             "primaryCompletionDateStruct": {
-                "date": "2006-04",
-                "type": "ACTUAL"
+                "date": "2021-08",
+                "type": "ESTIMATED"
             },
             "completionDateStruct": {
-                "date": "2007-12",
+                "date": "2021-10",
+                "type": "ESTIMATED"
+            },
+            "studyFirstSubmitDate": "2019-11-15",
+            "studyFirstSubmitQcDate": "2019-11-21",
+            "studyFirstPostDateStruct": {
+                "date": "2019-11-25",
                 "type": "ACTUAL"
             },
-            "studyFirstSubmitDate": "2003-11-04",
-            "studyFirstSubmitQcDate": "2003-11-04",
-            "studyFirstPostDateStruct": {
-                "date": "2003-11-05",
-                "type": "ESTIMATED"
-            },
-            "lastUpdateSubmitDate": "2017-01-17",
+            "lastUpdateSubmitDate": "2019-12-30",
             "lastUpdatePostDateStruct": {
-                "date": "2017-01-19",
-                "type": "ESTIMATED"
+                "date": "2020-01-02",
+                "type": "ACTUAL"
             }
         },
         "sponsorCollaboratorsModule": {
@@ -59,458 +48,238 @@
                 "type": "SPONSOR"
             },
             "leadSponsor": {
-                "name": "Wake Forest University Health Sciences",
+                "name": "Yonsei University",
                 "class": "OTHER"
-            },
-            "collaborators": [
-                {
-                    "name": "National Cancer Institute (NCI)",
-                    "class": "NIH"
-                }
-            ]
+            }
+        },
+        "oversightModule": {
+            "oversightHasDmc": false,
+            "isFdaRegulatedDrug": false,
+            "isFdaRegulatedDevice": false
         },
         "descriptionModule": {
-            "briefSummary": "RATIONALE: Colony-stimulating factors, such as sargramostim, may increase the number of immune cells found in bone marrow or peripheral blood and may bring about complete remission in patients who have chronic phase chronic myelogenous leukemia.\n\nPURPOSE: This phase II trial is studying sargramostim to see how well it works in treating patients with chronic phase chronic myelogenous leukemia that is not in complete cytogenetic remission after initial treatment.",
-            "detailedDescription": "OBJECTIVES:\n\n* Determine the efficacy and safety of sargramostim (GM-CSF) by cytogenetic examination of the bone marrow in patients with chronic phase chronic myelogenous leukemia who are not in complete cytogenetic remission after initial therapy.\n\nOUTLINE: Patients receive sargramostim (GM-CSF) subcutaneously daily for 3 months in the absence of disease progression or unacceptable toxicity. Patients achieving no response receive GM-CSF for an additional 3 months. Patients failing to achieve a partial response or better after the second course of GM-CSF are removed from the study. Patients achieving a partial response after the first or second course of GM-CSF continue to receive GM-CSF for an additional 9 months. Patients are then re-evaluated. Patients achieving a complete cytologic response at 9 months then receive GM-CSF 3 times weekly in the absence of disease progression or unacceptable toxicity.\n\nPatients are followed every 2 weeks.\n\nPROJECTED ACCRUAL: A total of 9-24 patients will be accrued for this study within 3 years."
+            "briefSummary": "Permissive hypercapnia increased the survival rate in patients with acute respiratory distress syndrome (ARDS) who required mechanical ventilation in critical care medicine. This has been explained by its association with ventilator induced lung injury. Since then, a protective lung ventilation strategy has been very important, with a low tidal volume of 4-6 ml/kg. Patients undergoing surgery will inevitably require mechanical ventilation. In particular, patients undergoing one lung ventilation for thoracic surgery may have increased airway pressure and a greater chance of ventilator induced lung injury. Recently, protective lung ventilation has been applied to patients undergoing one ung ventilation during thoracic surgery. The purpose of this study is to evaluate the difference in the degree of pulmonary oxygenation and the incidence of postoperative pulmonary complications in hypercapnia induced by controlling the respiratory rate with a constant tidal volume."
         },
         "conditionsModule": {
             "conditions": [
-                "Leukemia"
-            ],
-            "keywords": [
-                "chronic phase chronic myelogenous leukemia",
-                "chronic myelogenous leukemia, BCR-ABL1 positive"
+                "Thoracic Surgery"
             ]
         },
         "designModule": {
             "studyType": "INTERVENTIONAL",
             "phases": [
-                "PHASE2"
+                "NA"
             ],
             "designInfo": {
+                "allocation": "RANDOMIZED",
+                "interventionModel": "PARALLEL",
+                "interventionModelDescription": "Random sampling using random numbers is divided into three groups, and the ratio of each group is 1: 1: 1.",
                 "primaryPurpose": "TREATMENT",
                 "maskingInfo": {
-                    "masking": "NONE"
+                    "masking": "TRIPLE",
+                    "maskingDescription": "Patients, care givers and outcomes assessors are blinded. The investigator should not be included in the blind because they need to adjust the ventilator settings.",
+                    "whoMasked": [
+                        "PARTICIPANT",
+                        "CARE_PROVIDER",
+                        "OUTCOMES_ASSESSOR"
+                    ]
                 }
+            },
+            "enrollmentInfo": {
+                "count": 279,
+                "type": "ESTIMATED"
             }
         },
         "armsInterventionsModule": {
+            "armGroups": [
+                {
+                    "label": "group 40",
+                    "type": "EXPERIMENTAL",
+                    "description": "In group 40, target PaCO2 is 40 during surgery",
+                    "interventionNames": [
+                        "Other: group 40"
+                    ]
+                },
+                {
+                    "label": "group 50",
+                    "type": "EXPERIMENTAL",
+                    "description": "In group 50, target PaCO2 is 50 during surgery",
+                    "interventionNames": [
+                        "Other: group 50"
+                    ]
+                },
+                {
+                    "label": "group 60",
+                    "type": "EXPERIMENTAL",
+                    "description": "In group 60, target PaCO2 is 60 during surgery",
+                    "interventionNames": [
+                        "Other: group 60"
+                    ]
+                }
+            ],
             "interventions": [
                 {
-                    "type": "BIOLOGICAL",
-                    "name": "sargramostim"
+                    "type": "OTHER",
+                    "name": "group 40",
+                    "description": "During surgery, the TV(tidal volume) should maintain 6ml/kg (ideal body weight). After position change and OLV(one lung ventilation) for operation, each patient adjusts RR(respiratory rate) to reach target PaCO2 40 ± 5mmHg. Hemodynamic records and arterial blood tests are performed at the following times: After tracheal intubation, 15 minutes after in two lung ventilatory state at the supine position (T0), after 30 minutes reaching to the target PaCO2 by adjusting RR at the lateral position starting one lung ventilation (T1), and after 60 minutes while maintaining target PaCO2 (T2).",
+                    "armGroupLabels": [
+                        "group 40"
+                    ]
+                },
+                {
+                    "type": "OTHER",
+                    "name": "group 50",
+                    "description": "During surgery, the TV(tidal volume) should maintain 6ml/kg (ideal body weight). After position change and OLV(one lung ventilation) for operation, each patient adjusts RR(respiratory rate) to reach target PaCO2 50 ± 5mmHg. Hemodynamic records and arterial blood tests are performed at the following times: After tracheal intubation, 15 minutes after in two lung ventilatory state at the supine position (T0), after 30 minutes reaching to the target PaCO2 by adjusting RR at the lateral position starting one lung ventilation (T1), and after 60 minutes while maintaining target PaCO2 (T2).",
+                    "armGroupLabels": [
+                        "group 50"
+                    ]
+                },
+                {
+                    "type": "OTHER",
+                    "name": "group 60",
+                    "description": "During surgery, the TV(tidal volume) should maintain 6ml/kg (ideal body weight). After position change and OLV(one lung ventilation) for operation, each patient adjusts RR(respiratory rate) to reach target PaCO2 60 ± 5mmHg. Hemodynamic records and arterial blood tests are performed at the following times: After tracheal intubation, 15 minutes after in two lung ventilatory state at the supine position (T0), after 30 minutes reaching to the target PaCO2 by adjusting RR at the lateral position starting one lung ventilation (T1), and after 60 minutes while maintaining target PaCO2 (T2).",
+                    "armGroupLabels": [
+                        "group 60"
+                    ]
                 }
             ]
         },
         "outcomesModule": {
             "primaryOutcomes": [
                 {
-                    "measure": "Cytogenetic response (complete and partial)"
+                    "measure": "PaO2/FiO2 ratio",
+                    "description": "(arterial oxygen partial pressure / fractional inspired oxygen) at the time of T2 (PaO2 of ABGA/FiO2) T2",
+                    "timeFrame": "about 60 minutes after reaching to the target PaCO2 (T2)"
                 }
             ],
             "secondaryOutcomes": [
                 {
-                    "measure": "Toxicity as assessed by the Expanded Common Toxicity Criteria v2.0"
+                    "measure": "Post-op complication: desaturation event",
+                    "description": "desaturation event (\\<90%) the first 3 days after surgery",
+                    "timeFrame": "first 3 days after surgery"
                 },
                 {
-                    "measure": "Time to progression"
+                    "measure": "Post-op complication: oxygen therapy",
+                    "description": "necessity of oxygen therapy within the first 2\\~7 days after surgery hospitalized days, ICU days, expire",
+                    "timeFrame": "first 2~7 days after surgery"
                 },
                 {
-                    "measure": "Survival"
+                    "measure": "Post-op complication",
+                    "description": "The presence or absence of post operative complication like pneumonia, acute lung injury, re-intubation, ICU admission, ventilator care, empyema, broncho-pleura fistula, air-leakage, pleural effusion, pulmonary embolism, tracheostomy, wound infection, AKI, MI, etc.",
+                    "timeFrame": "30 days after surgery"
+                },
+                {
+                    "measure": "Post-op complication: hospitalized days",
+                    "description": "length of hospitalized stays CU days, expire",
+                    "timeFrame": "30 days after surgery"
+                },
+                {
+                    "measure": "Post-op complication: ICU days",
+                    "description": "length of ICU stays",
+                    "timeFrame": "30 days after surgery"
+                },
+                {
+                    "measure": "Dead",
+                    "description": "patient has been dead or not",
+                    "timeFrame": "30 days after surgery"
                 }
             ]
         },
         "eligibilityModule": {
-            "eligibilityCriteria": "DISEASE CHARACTERISTICS:\n\n* Histologically confirmed chronic phase chronic myelogenous leukemia (CML)\n\n  * Presence of t(9;22)(q34;q11) with at least 20 cells examined in metaphase by cytogenetic examination of the bone marrow\n* Complete hematologic remission during prior therapy\\* as seen on 2 separate blood count analyses, defined by the following:\n\n  * WBC no greater than 10,000/mm\\^3 AND platelet count no greater than 450,000/mm\\^3\n  * Disappearance of all signs and symptoms of disease, including palpable splenomegaly\n  * Normal differential counts (i.e., absence of blasts, promyelocytes, myelocytes, and metamyelocytes) NOTE: \\*Continuation of therapy that led to complete hematologic remission is required during study participation\n* Persistent cytogenetic disease despite 12 months of prior imatinib mesylate therapy, which may have included a trial dose-escalation OR intolerant of imatinib mesylate at a dose greater than 400 mg/day\n* Not in complete cytogenetic remission within 30 days of study entry\n\n  * Persistent Philadelphia chromosome by bone marrow exam\n\nPATIENT CHARACTERISTICS:\n\nAge\n\n* 18 and over\n\nPerformance status\n\n* ECOG 0-2\n\nLife expectancy\n\n* More than 6 months\n\nHematopoietic\n\n* See Disease Characteristics\n\nHepatic\n\n* Not specified\n\nRenal\n\n* Not specified\n\nOther\n\n* Not pregnant or nursing\n* Fertile patients must use effective contraception\n* No uncontrolled active infective\n* No serious medical or psychiatric illness that would prevent giving informed consent or limit survival to less than 6 months\n* No other malignancy not in remission except curatively treated basal cell skin cancer or carcinoma in situ of the cervix\n\nPRIOR CONCURRENT THERAPY:\n\nBiologic therapy\n\n* Prior sargramostim (GM-CSF) allowed\n* Prior interferon alfa for CML allowed\n* No prior stem cell transplantation\n* Concurrent interferon alfa\\* for CML allowed NOTE: \\*No dose increase during study participation\n\nChemotherapy\n\n* At least 4 weeks since prior chemotherapy\n\nEndocrine therapy\n\n* Not specified\n\nRadiotherapy\n\n* At least 4 weeks since prior radiotherapy\n* No concurrent radiotherapy\n\nSurgery\n\n* At least 4 weeks since prior surgery\n\nOther\n\n* Prior imatinib mesylate for CML allowed\n* No other concurrent medication for CML\n* Concurrent imatinib mesylate\\* for CML allowed NOTE: \\*No dose increase during study participation",
-            "healthyVolunteers": false,
+            "eligibilityCriteria": "Inclusion Criteria:\n\n1. Adult patients aged 40-80 years who are planning to have thoracoscopic single lobectomy or segmentectomy with one lung ventilation during surgery.\n2. American Society of Anesthesiologists (ASA) classification 1\\~3\n\nExclusion Criteria:\n\n1. patients with heart failure (NYHA class III\\~IV)\n2. patients who are having moderate obstructive lung disease or restrictive lung disease\n3. Low DLCO (\\< 75%)\n4. patients with brain disease history or increased ICP\n5. patients with pulmonary hypertension (mean PAP\\>25mmHg)\n6. patients with liver disease (AST level ≥100 IU/mL or ALT ≥ level 50 IU/L) or kidney disease (Creatine level ≥ 1.5 mg/dL)\n7. patients with pre-existing hypercapnia or metabolic acidosis\n8. body mass index (BMI) \\> 30 kg/m2\n9. patients who have had contralateral lung surgery\n10. patients who cannot read explanation and consent form\n11. patients who are pregnant",
+            "healthyVolunteers": true,
             "sex": "ALL",
-            "minimumAge": "18 Years",
-            "maximumAge": "120 Years",
+            "minimumAge": "40 Years",
+            "maximumAge": "80 Years",
             "stdAges": [
                 "ADULT",
                 "OLDER_ADULT"
             ]
         },
         "contactsLocationsModule": {
-            "overallOfficials": [
-                {
-                    "name": "Istvan Molnar, MD",
-                    "affiliation": "Wake Forest University Health Sciences",
-                    "role": "STUDY_CHAIR"
-                },
-                {
-                    "name": "Bayard L. Powell, MD",
-                    "affiliation": "Wake Forest University Health Sciences"
-                }
-            ],
             "locations": [
                 {
-                    "facility": "CCOP - Western Regional, Arizona",
-                    "city": "Phoenix",
-                    "state": "Arizona",
-                    "zip": "85006-2726",
-                    "country": "United States",
+                    "facility": "Department of Anaesthesiology and Pain Medicine, Anaesthesia and Pain Research Institute, Yonsei University College of Medicine",
+                    "city": "Seoul",
+                    "zip": "03722",
+                    "country": "Korea, Republic of",
                     "geoPoint": {
-                        "lat": 33.44838,
-                        "lon": -112.07404
-                    }
-                },
-                {
-                    "facility": "CCOP - Bay Area Tumor Institute",
-                    "city": "Oakland",
-                    "state": "California",
-                    "zip": "94609-3305",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 37.80437,
-                        "lon": -122.2708
-                    }
-                },
-                {
-                    "facility": "CCOP - Mount Sinai Medical Center",
-                    "city": "Miami Beach",
-                    "state": "Florida",
-                    "zip": "33140",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 25.79065,
-                        "lon": -80.13005
-                    }
-                },
-                {
-                    "facility": "Regional Radiation Oncology Center at Rome",
-                    "city": "Rome",
-                    "state": "Georgia",
-                    "zip": "30165",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 34.25704,
-                        "lon": -85.16467
-                    }
-                },
-                {
-                    "facility": "CCOP - Central Illinois",
-                    "city": "Decatur",
-                    "state": "Illinois",
-                    "zip": "62526",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 39.84031,
-                        "lon": -88.9548
-                    }
-                },
-                {
-                    "facility": "Kentuckiana Cancer Institute, PLLC",
-                    "city": "Louisville",
-                    "state": "Kentucky",
-                    "zip": "40202",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 38.25424,
-                        "lon": -85.75941
-                    }
-                },
-                {
-                    "facility": "MBCCOP - LSU Health Sciences Center",
-                    "city": "New Orleans",
-                    "state": "Louisiana",
-                    "zip": "70112",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 29.95465,
-                        "lon": -90.07507
-                    }
-                },
-                {
-                    "facility": "Alamance Cancer Center",
-                    "city": "Burlington",
-                    "state": "North Carolina",
-                    "zip": "27216",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 36.09569,
-                        "lon": -79.4378
-                    }
-                },
-                {
-                    "facility": "Hugh Chatham Memorial Hospital",
-                    "city": "Elkin",
-                    "state": "North Carolina",
-                    "zip": "28621",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 36.2443,
-                        "lon": -80.8484
-                    }
-                },
-                {
-                    "facility": "Southeastern Medical Oncology Center",
-                    "city": "Goldsboro",
-                    "state": "North Carolina",
-                    "zip": "27534-9479",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 35.38488,
-                        "lon": -77.99277
-                    }
-                },
-                {
-                    "facility": "Brody School of Medicine at East Carolina University",
-                    "city": "Greenville",
-                    "state": "North Carolina",
-                    "zip": "27858",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 35.61266,
-                        "lon": -77.36635
-                    }
-                },
-                {
-                    "facility": "Comprehensive Cancer Center at Wake Forest University",
-                    "city": "Winston-Salem",
-                    "state": "North Carolina",
-                    "zip": "27157-1096",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 36.09986,
-                        "lon": -80.24422
-                    }
-                },
-                {
-                    "facility": "CCOP - Columbus",
-                    "city": "Columbus",
-                    "state": "Ohio",
-                    "zip": "43206",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 39.96118,
-                        "lon": -82.99879
-                    }
-                },
-                {
-                    "facility": "Cancer Centers of the Carolinas - Eastside",
-                    "city": "Greenville",
-                    "state": "South Carolina",
-                    "zip": "29615",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 34.85262,
-                        "lon": -82.39401
-                    }
-                },
-                {
-                    "facility": "CCOP - Upstate Carolina",
-                    "city": "Spartanburg",
-                    "state": "South Carolina",
-                    "zip": "29303",
-                    "country": "United States",
-                    "geoPoint": {
-                        "lat": 34.94957,
-                        "lon": -81.93205
+                        "lat": 37.566,
+                        "lon": 126.9784
                     }
                 }
             ]
+        },
+        "ipdSharingStatementModule": {
+            "ipdSharing": "NO"
         }
     },
     "derivedSection": {
         "miscInfoModule": {
-            "versionHolder": "2024-06-07"
+            "versionHolder": "2024-07-01"
         },
         "conditionBrowseModule": {
             "meshes": [
                 {
-                    "id": "D000007938",
-                    "term": "Leukemia"
-                },
-                {
-                    "id": "D000015464",
-                    "term": "Leukemia, Myelogenous, Chronic, BCR-ABL Positive"
-                },
-                {
-                    "id": "D000015466",
-                    "term": "Leukemia, Myeloid, Chronic-Phase"
+                    "id": "D000006935",
+                    "term": "Hypercapnia"
                 }
             ],
             "ancestors": [
                 {
-                    "id": "D000009370",
-                    "term": "Neoplasms by Histologic Type"
-                },
-                {
-                    "id": "D000009369",
-                    "term": "Neoplasms"
-                },
-                {
-                    "id": "D000006402",
-                    "term": "Hematologic Diseases"
-                },
-                {
-                    "id": "D000007951",
-                    "term": "Leukemia, Myeloid"
-                },
-                {
-                    "id": "D000009196",
-                    "term": "Myeloproliferative Disorders"
-                },
-                {
-                    "id": "D000001855",
-                    "term": "Bone Marrow Diseases"
-                },
-                {
-                    "id": "D000002908",
-                    "term": "Chronic Disease"
-                },
-                {
-                    "id": "D000020969",
-                    "term": "Disease Attributes"
-                },
-                {
-                    "id": "D000010335",
-                    "term": "Pathologic Processes"
+                    "id": "D000012818",
+                    "term": "Signs and Symptoms, Respiratory"
                 }
             ],
             "browseLeaves": [
                 {
-                    "id": "M10945",
-                    "name": "Leukemia",
-                    "asFound": "Leukemia",
+                    "id": "M9986",
+                    "name": "Hypercapnia",
+                    "asFound": "Hypercapnia",
                     "relevance": "HIGH"
                 },
                 {
-                    "id": "M10955",
-                    "name": "Leukemia, Myeloid",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "M18123",
-                    "name": "Leukemia, Myelogenous, Chronic, BCR-ABL Positive",
-                    "asFound": "Chronic myelogenous leukemia",
-                    "relevance": "HIGH"
-                },
-                {
-                    "id": "M18125",
-                    "name": "Leukemia, Myeloid, Chronic-Phase",
-                    "asFound": "Chronic phase chronic myelogenous leukemia",
-                    "relevance": "HIGH"
-                },
-                {
-                    "id": "M12315",
-                    "name": "Neoplasms by Histologic Type",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "M9490",
-                    "name": "Hematologic Diseases",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "M12149",
-                    "name": "Myeloproliferative Disorders",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "M5134",
-                    "name": "Bone Marrow Diseases",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "M6147",
-                    "name": "Chronic Disease",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "M22700",
-                    "name": "Disease Attributes",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "T3995",
-                    "name": "Myeloid Leukemia",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "T1303",
-                    "name": "Chronic Graft Versus Host Disease",
-                    "relevance": "LOW"
-                },
-                {
-                    "id": "T1309",
-                    "name": "Chronic Myeloid Leukemia",
-                    "asFound": "Chronic myelogenous leukemia",
-                    "relevance": "HIGH"
-                },
-                {
-                    "id": "T1311",
-                    "name": "Chronic Myeloproliferative Disorders",
+                    "id": "M15623",
+                    "name": "Signs and Symptoms, Respiratory",
                     "relevance": "LOW"
                 }
             ],
             "browseBranches": [
-                {
-                    "abbrev": "BC04",
-                    "name": "Neoplasms"
-                },
-                {
-                    "abbrev": "BC15",
-                    "name": "Blood and Lymph Conditions"
-                },
-                {
-                    "abbrev": "All",
-                    "name": "All Conditions"
-                },
                 {
                     "abbrev": "BC23",
                     "name": "Symptoms and General Pathology"
                 },
                 {
-                    "abbrev": "Rare",
-                    "name": "Rare Diseases"
+                    "abbrev": "All",
+                    "name": "All Conditions"
                 }
             ]
         },
         "interventionBrowseModule": {
-            "meshes": [
-                {
-                    "id": "C000081222",
-                    "term": "Sargramostim"
-                }
-            ],
-            "ancestors": [
-                {
-                    "id": "D000007155",
-                    "term": "Immunologic Factors"
-                },
-                {
-                    "id": "D000045505",
-                    "term": "Physiological Effects of Drugs"
-                }
-            ],
             "browseLeaves": [
                 {
-                    "id": "M257633",
-                    "name": "Molgramostim",
+                    "id": "M4854",
+                    "name": "Benzocaine",
                     "relevance": "LOW"
                 },
                 {
-                    "id": "M219218",
-                    "name": "Sargramostim",
-                    "asFound": "Spinal Cord",
-                    "relevance": "HIGH"
-                },
-                {
-                    "id": "M10201",
-                    "name": "Immunologic Factors",
+                    "id": "T433",
+                    "name": "Tannic Acid",
                     "relevance": "LOW"
                 }
             ],
             "browseBranches": [
                 {
-                    "abbrev": "ANeo",
-                    "name": "Antineoplastic Agents"
+                    "abbrev": "CNSDep",
+                    "name": "Central Nervous System Depressants"
                 },
                 {
                     "abbrev": "All",
                     "name": "All Drugs and Chemicals"
+                },
+                {
+                    "abbrev": "Ot",
+                    "name": "Other Dietary Supplements"
                 }
             ]
         }
