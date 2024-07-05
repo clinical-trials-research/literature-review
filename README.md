@@ -19,6 +19,10 @@ cd literature-review
 poetry install
 ```
 
+## Notebooks
+
+1. [Summary Statistics](./notebooks/01-summary-stats.ipynb)
+
 ## Resources
 
 - [Clinical Trials API](https://clinicaltrials.gov/data-api/api)
