@@ -1,0 +1,296 @@
+{
+    "NCTId": "",
+    "OrgStudyId": "",
+    "OrgFullName": "",
+    "OrgClass": "",
+    "BriefTitle": "",
+    "OfficialTitle": "",
+    "Acronym": "",
+    "StatusVerifiedDate": "",
+    "OverallStatus": "",
+    "HasExpandedAccess": false,
+    "StartDate": "",
+    "PrimaryCompletionDate": "",
+    "PrimaryCompletionDateType": "",
+    "CompletionDate": "",
+    "CompletionDateType": "",
+    "StudyFirstSubmitDate": "",
+    "StudyFirstSubmitQCDate": "",
+    "StudyFirstPostDate": "",
+    "StudyFirstPostDateType": "",
+    "LastUpdateSubmitDate": "",
+    "LastUpdatePostDate": "",
+    "LastUpdatePostDateType": "",
+    "ResponsiblePartyType": "",
+    "LeadSponsorName": "",
+    "LeadSponsorClass": "",
+    "Collaborators": [
+        {
+            "CollaboratorName": "",
+            "CollaboratorClass": ""
+        }
+    ],
+    "OversightHasDMC": false,
+    "BriefSummary": "",
+    "DetailedDescription": "",
+    "Condition": "",
+    "Keyword": "",
+    "StudyType": "",
+    "PatientRegistry": false,
+    "DesignObservationalModel": "",
+    "DesignTimePerspective": "",
+    "EnrollmentCount": 0,
+    "EnrollmentType": "",
+    "PrimaryOutcomes": [
+        {
+            "PrimaryOutcomeMeasure": "",
+            "PrimaryOutcomeDescription": "",
+            "PrimaryOutcomeTimeFrame": ""
+        }
+    ],
+    "SecondaryOutcomes": [
+        {
+            "SecondaryOutcomeMeasure": "",
+            "SecondaryOutcomeDescription": "",
+            "SecondaryOutcomeTimeFrame": ""
+        }
+    ],
+    "EligibilityCriteria": "",
+    "HealthyVolunteers": true,
+    "Sex": "",
+    "MinimumAge": "",
+    "MaximumAge": "",
+    "StdAge": "",
+    "StudyPopulation": "",
+    "SamplingMethod": "",
+    "OverallOfficials": [
+        {
+            "OverallOfficialName": "",
+            "OverallOfficialAffiliation": "",
+            "OverallOfficialRole": ""
+        }
+    ],
+    "Locations": [
+        {
+            "LocationFacility": "",
+            "LocationCity": "",
+            "LocationState": "",
+            "LocationZip": "",
+            "LocationCountry": ""
+        }
+    ],
+    "VersionHolder": "",
+    "HasResults": false,
+    "StartDateType": "",
+    "IsFDARegulatedDrug": false,
+    "IsFDARegulatedDevice": false,
+    "Phase": "",
+    "DesignAllocation": "",
+    "DesignInterventionModel": "",
+    "DesignPrimaryPurpose": "",
+    "DesignMasking": "",
+    "DesignWhoMasked": "",
+    "ArmGroups": [
+        {
+            "ArmGroupLabel": "",
+            "ArmGroupType": "",
+            "ArmGroupDescription": "",
+            "ArmGroupInterventionName": ""
+        }
+    ],
+    "Interventions": [
+        {
+            "InterventionType": "",
+            "InterventionName": ""
+        }
+    ],
+    "StudyReferences": [
+        {
+            "ReferencePMID": "",
+            "ReferenceType": "",
+            "ReferenceCitation": ""
+        }
+    ],
+    "IPDSharing": "",
+    "ConditionMeshes": [
+        {
+            "ConditionMeshId": "",
+            "ConditionMeshTerm": ""
+        }
+    ],
+    "ConditionAncestors": [
+        {
+            "ConditionAncestorId": "",
+            "ConditionAncestorTerm": ""
+        }
+    ],
+    "ConditionBrowseLeaves": [
+        {
+            "ConditionBrowseLeafId": "",
+            "ConditionBrowseLeafName": "",
+            "ConditionBrowseLeafAsFound": "",
+            "ConditionBrowseLeafRelevance": ""
+        }
+    ],
+    "ConditionBrowseBranches": [
+        {
+            "ConditionBrowseBranchAbbrev": "",
+            "ConditionBrowseBranchName": ""
+        }
+    ],
+    "InterventionMeshes": [
+        {
+            "InterventionMeshId": "",
+            "InterventionMeshTerm": ""
+        }
+    ],
+    "InterventionAncestors": [
+        {
+            "InterventionAncestorId": "",
+            "InterventionAncestorTerm": ""
+        }
+    ],
+    "InterventionBrowseLeaves": [
+        {
+            "InterventionBrowseLeafId": "",
+            "InterventionBrowseLeafName": "",
+            "InterventionBrowseLeafAsFound": "",
+            "InterventionBrowseLeafRelevance": ""
+        }
+    ],
+    "InterventionBrowseBranches": [
+        {
+            "InterventionBrowseBranchAbbrev": "",
+            "InterventionBrowseBranchName": ""
+        }
+    ],
+    "protocolSection.outcomesModule.otherOutcomes": [
+        {
+            "OtherOutcomeMeasure": "",
+            "OtherOutcomeDescription": "",
+            "OtherOutcomeTimeFrame": ""
+        }
+    ],
+    "protocolSection.contactsLocationsModule.centralContacts": [
+        {
+            "CentralContactName": "",
+            "CentralContactRole": "",
+            "CentralContactPhone": "",
+            "CentralContactEMail": ""
+        }
+    ],
+    "ResultsFirstSubmitDate": "",
+    "ResultsFirstSubmitQCDate": "",
+    "ResultsFirstPostDate": "",
+    "ResultsFirstPostDateType": "",
+    "resultsSection.participantFlowModule.groups": [
+        {
+            "FlowGroupId": "",
+            "FlowGroupTitle": "",
+            "FlowGroupDescription": ""
+        }
+    ],
+    "resultsSection.participantFlowModule.periods": [
+        {
+            "FlowPeriodTitle": "",
+            "resultsSection.participantFlowModule.periods.milestones": [
+                {
+                    "FlowMilestoneType": "",
+                    "resultsSection.participantFlowModule.periods.milestones.achievements": [
+                        {
+                            "FlowAchievementGroupId": "",
+                            "FlowAchievementNumSubjects": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "resultsSection.baselineCharacteristicsModule.groups": [
+        {
+            "BaselineGroupId": "",
+            "BaselineGroupTitle": "",
+            "BaselineGroupDescription": ""
+        }
+    ],
+    "resultsSection.baselineCharacteristicsModule.denoms": [
+        {
+            "BaselineDenomUnits": "",
+            "resultsSection.baselineCharacteristicsModule.denoms.counts": [
+                {
+                    "BaselineDenomCountGroupId": "",
+                    "BaselineDenomCountValue": ""
+                }
+            ]
+        }
+    ],
+    "resultsSection.baselineCharacteristicsModule.measures": [
+        {
+            "BaselineMeasureTitle": "",
+            "BaselineMeasureParamType": "",
+            "BaselineMeasureUnitOfMeasure": "",
+            "resultsSection.baselineCharacteristicsModule.measures.classes": [
+                {
+                    "resultsSection.baselineCharacteristicsModule.measures.classes.categories": [
+                        {
+                            "BaselineCategoryTitle": "",
+                            "resultsSection.baselineCharacteristicsModule.measures.classes.categories.measurements": [
+                                {
+                                    "BaselineMeasurementGroupId": "",
+                                    "BaselineMeasurementValue": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures": [
+        {
+            "OutcomeMeasureType": "",
+            "OutcomeMeasureTitle": "",
+            "OutcomeMeasureDescription": "",
+            "OutcomeMeasurePopulationDescription": "",
+            "OutcomeMeasureReportingStatus": "",
+            "OutcomeMeasureParamType": "",
+            "OutcomeMeasureDispersionType": "",
+            "OutcomeMeasureUnitOfMeasure": "",
+            "OutcomeMeasureTimeFrame": "",
+            "resultsSection.outcomeMeasuresModule.outcomeMeasures.groups": [
+                {
+                    "OutcomeGroupId": "",
+                    "OutcomeGroupTitle": "",
+                    "OutcomeGroupDescription": ""
+                }
+            ],
+            "resultsSection.outcomeMeasuresModule.outcomeMeasures.denoms": [
+                {
+                    "OutcomeDenomUnits": "",
+                    "resultsSection.outcomeMeasuresModule.outcomeMeasures.denoms.counts": [
+                        {
+                            "OutcomeDenomCountGroupId": "",
+                            "OutcomeDenomCountValue": ""
+                        }
+                    ]
+                }
+            ],
+            "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes": [
+                {
+                    "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes.categories": [
+                        {
+                            "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes.categories.measurements": [
+                                {
+                                    "OutcomeMeasurementGroupId": "",
+                                    "OutcomeMeasurementValue": "",
+                                    "OutcomeMeasurementLowerLimit": "",
+                                    "OutcomeMeasurementUpperLimit": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

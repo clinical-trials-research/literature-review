@@ -1,3 +1,5 @@
+import json
+
 import httpx
 
 API_BASE = "https://clinicaltrials.gov/api/v2"
@@ -10,11 +12,13 @@ JSON_TO_TABLE = {
     "Condition": "Condition",
     "Keyword": "Keyword",
     "Phase": "Phase",
+    "protocolSection.armsInterventionsModule.armGroups": "ArmGroups",
     "protocolSection.armsInterventionsModule.interventions": "Interventions",
     "protocolSection.outcomesModule.primaryOutcomes": "PrimaryOutcomes",
     "protocolSection.outcomesModule.secondaryOutcomes": "SecondaryOutcomes",
     "protocolSection.contactsLocationsModule.overallOfficials": "OverallOfficials",
     "protocolSection.contactsLocationsModule.locations": "Locations",
+    "protocolSection.referencesModule.references": "StudyReferences",
     "derivedSection.conditionBrowseModule.meshes": "ConditionMeshes",
     "derivedSection.interventionBrowseModule.meshes": "InterventionMeshes",
     "derivedSection.conditionBrowseModule.ancestors": "ConditionAncestors",
@@ -23,8 +27,6 @@ JSON_TO_TABLE = {
     "derivedSection.interventionBrowseModule.browseLeaves": "InterventionBrowseLeaves",
     "derivedSection.conditionBrowseModule.browseBranches": "ConditionBrowseBranches",
     "derivedSection.interventionBrowseModule.browseBranches": "InterventionBrowseBranches",
-    "protocolSection.armsInterventionsModule.armGroups": "ArmGroups",
-    "protocolSection.referencesModule.references": "StudyReferences",
 }
 
 
@@ -37,12 +39,21 @@ class Studies:
         self.num_studies = num_studies
         self._field_to_piece = self._get_field_to_piece()
         self._studies = self._get_studies_generator()
+        self._structure = {}
 
     def get_studies(self):
         """
         Retrieve a list of normalized studies.
         """
-        return [self._process_study(study) for study in next(self._studies, [])]
+        res = []
+        for study in next(self._studies, []):
+            processed_study = self._process_study(study)
+            self._structure |= processed_study
+            res.append(processed_study)
+        # res = [self._process_study(study) for study in next(self._studies, [])]
+        with open("./files/structure.json", "w") as f:
+            json.dump(self._structure, f)
+        return res
 
     def get_total_studies(self):
         """
