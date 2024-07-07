@@ -1,79 +1,9 @@
 import json
 
-from litreview.studies import Studies
+with open("./files/sample_processed.json") as f:
+    structure = json.load(f)
 
-JSON_TO_TABLE = {
-    "protocolSection.identificationModule.secondaryIdInfos": "SecondaryIdInfos",
-    "protocolSection.sponsorCollaboratorsModule.collaborators": "Collaborators",
-    "Condition": "Condition",
-    "Keyword": "Keyword",
-    "Phase": "Phase",
-    "protocolSection.armsInterventionsModule.armGroups": "ArmGroups",
-    "protocolSection.armsInterventionsModule.interventions": "Interventions",
-    "protocolSection.outcomesModule.primaryOutcomes": "PrimaryOutcomes",
-    "protocolSection.outcomesModule.secondaryOutcomes": "SecondaryOutcomes",
-    "protocolSection.contactsLocationsModule.overallOfficials": "OverallOfficials",
-    "protocolSection.contactsLocationsModule.locations": "Locations",
-    "protocolSection.referencesModule.references": "StudyReferences",
-    "derivedSection.conditionBrowseModule.meshes": "ConditionMeshes",
-    "derivedSection.interventionBrowseModule.meshes": "InterventionMeshes",
-    "derivedSection.conditionBrowseModule.ancestors": "ConditionAncestors",
-    "derivedSection.interventionBrowseModule.ancestors": "InterventionAncestors",
-    "derivedSection.conditionBrowseModule.browseLeaves": "ConditionBrowseLeaves",
-    "derivedSection.interventionBrowseModule.browseLeaves": "InterventionBrowseLeaves",
-    "derivedSection.conditionBrowseModule.browseBranches": "ConditionBrowseBranches",
-    "derivedSection.interventionBrowseModule.browseBranches": "InterventionBrowseBranches",
-}
+study = {key: value for key, value in structure.items() if not isinstance(value, list)}
 
-STUDY_TABLE = [
-    "NCTId",
-    "OrgStudyId",
-    "OrgFullName",
-    "OrgClass",
-    "BriefTitle",
-    "OfficialTitle",
-    "StatusVerifiedDate",
-    "OverallStatus",
-    "HasExpandedAccess",
-    "StartDate",
-    "PrimaryCompletionDate",
-    "PrimaryCompletionDateType",
-    "CompletionDate",
-    "CompletionDateType",
-    "StudyFirstSubmitDate",
-    "StudyFirstSubmitQCDate",
-    "StudyFirstPostDate",
-    "StudyFirstPostDateType",
-    "LastUpdateSubmitDate",
-    "LastUpdatePostDate",
-    "LastUpdatePostDateType",
-    "ResponsiblePartyType",
-    "LeadSponsorName",
-    "LeadSponsorClass",
-    "BriefSummary",
-    "DetailedDescription",
-    "StudyType",
-    "DesignAllocation",
-    "DesignPrimaryPurpose",
-    "DesignMasking",
-    "EnrollmentCount",
-    "EnrollmentType",
-    "EligibilityCriteria",
-    "HealthyVolunteers",
-    "Sex",
-    "MinimumAge",
-    "MaximumAge",
-    "VersionHolder",
-    "HasResults",
-    "OversightHasDMC",
-    "IsFDARegulatedDrug",
-    "IsFDARegulatedDevice",
-    "IPDSharing",
-    "Condition",
-    "Keyword",
-    "Phase",
-    "StdAge",
-]
-
-studies = Studies(500)
-studies.get_studies()
+with open("./files/test.json", "w") as f:
+    json.dump(study, f)
