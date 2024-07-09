@@ -27,6 +27,14 @@ JSON_TO_TABLE = {
     "derivedSection.interventionBrowseModule.browseLeaves": "InterventionBrowseLeaves",
     "derivedSection.conditionBrowseModule.browseBranches": "ConditionBrowseBranches",
     "derivedSection.interventionBrowseModule.browseBranches": "InterventionBrowseBranches",
+    "protocolSection.outcomesModule.otherOutcomes": "OtherOutcomes",
+    "resultsSection.participantFlowModule.groups": "FlowGroups",
+    "resultsSection.baselineCharacteristicsModule.groups": "BaselineGroups",
+    "protocolSection.referencesModule.seeAlsoLinks": "SeeAlsoLinks",
+    "documentSection.largeDocumentModule.largeDocs": "LargeDocs",
+    "annotationSection.annotationModule.unpostedAnnotation.unpostedEvents": "UnpostedEvents",
+    "derivedSection.miscInfoModule.submissionTracking.submissionInfos": "SubmissionInfos",
+    "protocolSection.referencesModule.availIpds": "AvailIPDs",
 }
 
 

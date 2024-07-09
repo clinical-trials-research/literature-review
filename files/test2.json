@@ -1,116 +1,396 @@
 {
-    "NCTId": "NCT00222079",
-    "OrgStudyId": "200308067",
-    "OrgFullName": "University of Iowa",
-    "OrgClass": "OTHER",
-    "BriefTitle": "Evaluation of Esomeprazole in Treating Gastro-esophageal Reflux Disease (GERD) in Head and Neck Cancer Patients Exposed to Radiation Therapy",
-    "OfficialTitle": "Pilot Study to Evaluate Esomeprazole (Nexium) in Treating Gastro-esophageal Reflux in Patients With Head and Neck Cancer With Prior External Beam Radiation Therapy: a Randomized, Prospective, Placebo-controlled, Double-blind Study.",
-    "Acronym": "COCA-MACS",
-    "StatusVerifiedDate": "2017-12",
-    "OverallStatus": "TERMINATED",
-    "HasExpandedAccess": false,
-    "StartDate": "2004-11",
-    "PrimaryCompletionDate": "2007-10",
-    "PrimaryCompletionDateType": "ACTUAL",
-    "CompletionDate": "2008-02",
-    "CompletionDateType": "ACTUAL",
-    "StudyFirstSubmitDate": "2005-09-16",
-    "StudyFirstSubmitQCDate": "2005-09-16",
-    "StudyFirstPostDate": "2005-09-22",
-    "StudyFirstPostDateType": "ESTIMATED",
-    "LastUpdateSubmitDate": "2017-12-12",
-    "LastUpdatePostDate": "2017-12-14",
-    "LastUpdatePostDateType": "ACTUAL",
-    "ResponsiblePartyType": "SPONSOR_INVESTIGATOR",
-    "LeadSponsorName": "Douglas Trask",
-    "LeadSponsorClass": "OTHER",
-    "OversightHasDMC": false,
-    "BriefSummary": "The purpose of this research study is to measure acid reflux into the throat both before and after medical treatment in people who have had radiation therapy to their head and neck for the treatment of cancer. Many people who have received head and neck radiation therapy develop a dry mouth as a result of the radiation damage to their saliva glands. In addition to the discomfort associated with a dry mouth, the decrease in saliva may increase the severity of gastro-esophageal reflux disease (acid reflux). Acid reflux occurs when acid escapes from your stomach into your throat. You may not have any symptoms of acid reflux, but often it can cause symptoms of heartburn or chest discomfort.\n\nAcid reflux can be treated once it is diagnosed. Treatment consists of dietary changes, behavioral alterations, and medication. Medications are available that decrease the amount of acid in your stomach. Diagnosis of acid reflux is made with a pH-probe to test for acid in your throat.",
-    "DetailedDescription": "The annual incidence of squamous cell carcinoma of the head and neck (SCCHN) is 40,000 cases per year in the US and 60,000 cases per year in Europe. Radiation therapy is employed in combination with chemotherapy in primary treatment or as adjuvant therapy for over half of patients with SSCHN.\n\nA high incidence of pathologic laryngopharyngeal reflux and gastroesophageal reflux is observed in patients with head and neck cancer. When treatment for the cancer includes radiation therapy, an incidence of 90% has been reported \\[2\\]. Although the interplay between acid reflux and the development of head and neck cancer remains unclear, there is a strong argument that radiation therapy worsens the problem by muting the body's ability to neutralize acid.\n\nRadiation therapy is extensively used in the treatment of squamous cell carcinoma of the head and neck. Radiation therapy works by exploiting a survival differential between malignant cells and normal cells. Simply stated, the malignant cells are more likely to die with radiation when compared to normal non-malignant cells. However, not all normal cells respond equally and some normal tissues have marked sensitivity to radiation damage. Salivary glands are one such radiosensitive tissue that is permanently destroyed with external-beam radiotherapy.\n\nDamage to salivary tissues by radiation decreases their ability to excrete saliva. This is supported by Olmos et al, who used salivary scintigraphy on both irradiated and non-irradiated patients and found that 84% of those irradiated had total or partial disturbance in both baseline and stimulated function. Of those treated with greater than 4500cGy, salivary excretion was almost invariably impaired. Xerostomia is the term for the dry mouth, which can result from this loss.\n\nIn addition to the volume of the saliva, the contents of the saliva are also important. Helm et al. \"...evaluated the properties of human saliva relevant to its potential contribution to esophageal acid clearance.\" By measuring the capacity for acid neutralization and plotting titration curves, they identified that saliva and especially its bicarbonate content play an important role in neutralization of esophageal acid in both resting and lozenge-stimulated states.\n\nAs saliva plays an active role in the neutralization of esophageal acid and its clearance from the esophagus, loss of saliva is predicted to increase the severity and incidence of reflux as the protective effect of saliva's ability to clear and neutralize acid reflux is diminished. Korsten et al., assessed the effects of chronic xerostomia on parameters of gastroesophageal reflux and esophagitis and reported markedly impaired clearance of acid from the esophagus and abnormal 24-hour intra-esophageal pH studies from a cohort of male patients with xerostomia.\n\nMedications are available to increase salivary flow but these are often minimally effective and poorly tolerated. Decreasing stomach acid production is an alternative method of mitigating the effect of GERD in these patients.\n\nEsomeprazole has been proven beneficial in the treatment of gastroesophageal reflux disease and is anticipated to be beneficial in treating SCCHN patients treated with external-beam radiation therapy.",
-    "Condition": "Gastro-esophageal Reflux",
-    "Keyword": "phrenic nerve, Shoulder Pain, Nuromodulation",
-    "StudyType": "INTERVENTIONAL",
-    "PatientRegistry": false,
-    "DesignObservationalModel": "CASE_CONTROL",
-    "DesignTimePerspective": "CROSS_SECTIONAL",
-    "EnrollmentCount": 40,
-    "EnrollmentType": "ACTUAL",
-    "EligibilityCriteria": "Inclusion Criteria:\n\n1. Signed informed consent\n2. History of head and neck cancer\n3. Radiation Therapy (external beam or IMRT)\n\n   1. Must have received equal or greater than 5000 cGy cumulative dose\n   2. Must have complaint of xerostomia\n   3. Greater than three month interval since radiation treatment\n\nExclusion Criteria:\n\n1. Subjects unable to tolerate pH-probe in past\n2. Subjects currently on proton-pump inhibitor (PPI) or H-2 receptor antagonist therapy\n3. Prior history of esophago-gastric surgery\n4. Symptoms of gastrointestinal bleeding (melena, hematemesis)\n5. Known hepatic cirrhosis or esophageal varices\n6. Prior esophageal perforation\n7. Pregnant, nursing or not likely to be using adequate contraceptive measures\n8. Subjects not predicted to survive duration of study\n9. Subjects with allergies or sensitivities to proton-pump inhibitors\n10. Psychological, familial, sociological or geographical conditions which do not permit Study follow-up and compliance with study protocol\n11. Subjects predicted to undergo surgery, chemotherapy or radiation therapy for head and neck cancer during the course of study",
-    "HealthyVolunteers": true,
-    "Sex": "ALL",
-    "MinimumAge": "18 Years",
-    "MaximumAge": "64 Years",
-    "StdAge": "ADULT, OLDER_ADULT",
-    "StudyPopulation": "Patients with mild intermittent claudication (Fontaine IIa).",
-    "SamplingMethod": "NON_PROBABILITY_SAMPLE",
-    "VersionHolder": "2024-07-05",
-    "HasResults": false,
-    "StartDateType": "ACTUAL",
-    "IsFDARegulatedDrug": false,
-    "IsFDARegulatedDevice": false,
-    "Phase": "NA",
-    "DesignAllocation": "RANDOMIZED",
-    "DesignInterventionModel": "SINGLE_GROUP",
-    "DesignPrimaryPurpose": "TREATMENT",
-    "DesignMasking": "DOUBLE",
-    "DesignWhoMasked": "PARTICIPANT, INVESTIGATOR",
-    "IPDSharing": "NO",
-    "ResultsFirstSubmitDate": "2023-06-16",
-    "ResultsFirstSubmitQCDate": "2023-09-21",
-    "ResultsFirstPostDate": "2023-10-16",
-    "ResultsFirstPostDateType": "ACTUAL",
-    "EventsFrequencyThreshold": "0",
-    "AgreementPISponsorEmployee": true,
-    "AgreementRestrictiveAgreement": true,
-    "PointOfContactTitle": "Pamela Frischmeyer-Guerrerio",
-    "PointOfContactOrganization": "National Institute of Allergy and Infectious Diseases",
-    "PointOfContactEMail": "pamela.guerrerio@nih.gov",
-    "PointOfContactPhone": "301-402-9782",
-    "ResponsiblePartyInvestigatorFullName": "Douglas Trask",
-    "ResponsiblePartyInvestigatorTitle": "Principal Investigator",
-    "ResponsiblePartyInvestigatorAffiliation": "University of Iowa",
-    "ResponsiblePartyOldNameTitle": "Paul McDonald",
-    "ResponsiblePartyOldOrganization": "University of Waterloo",
-    "FlowPreAssignmentDetails": "Three participants withdrew prior to start of study. One participant was ineligible due to partial 2nd vaccine dose pre-enrollment outside of the study",
-    "EventsTimeFrame": "Blinded Active Vaccine 2 & Placebo - Within 3-hour post-vaccination Overall Study - up to 17 months post intervention in the crossover phase Open-Label Booster Vaccine - up to 11 months post vaccine administration",
-    "EventsDescription": "Adverse events associated with the crossover phase have been grouped under 'Overall Study' due to the brief washout period between the active vaccine and the placebo.",
-    "LimitationsAndCaveatsDescription": "There was no pre-determined method for addressing causality of adverse events in the crossover phase of the study due to the brief washout period between the active vaccine and placebo administration.",
-    "AgreementRestrictionType": "OTHER",
-    "AgreementOtherDetails": "The PI may not publish, divulge, reveal, disclose, or use the data and or results of the study without prior written consent of Vistakon.",
-    "LastKnownStatus": "RECRUITING",
-    "BioSpecRetention": "SAMPLES_WITH_DNA",
-    "BioSpecDescription": "Whole blood, serum, plasma, frozen tissue.",
-    "GenderBased": true,
-    "NCTIdAlias": "NCT00064168",
-    "FlowRecruitmentDetails": "This study was open to accrual from December 2009 to August 2011.",
-    "BaselinePopulationDescription": "One healthy control participant that received sham stimulation was excluded from analysis as we were unable to find an age and sex matched participant. One healthy control participant that received sham stimulation did not complete the study due to technical difficulties.",
-    "IsUSExport": false,
-    "WhyStopped": "Project canceled due to the implementation of IMRT, fewer patients reporting xerostomia.",
-    "DesignInterventionModelDescription": "Randomised controlled trial of parallel group design.",
-    "IPDSharingDescription": "Analytic code for generation of the predictive signature will be made available to other researchers",
-    "IsUnapprovedDevice": true,
-    "PointOfContactPhoneExt": "3626",
-    "DesignMaskingDescription": "One \"blinded (when possible)\" independent assessor",
-    "GenderDescription": "Pregnant Black women",
-    "TargetDuration": "1 Month",
-    "OrgStudyIdType": "NIH",
-    "OrgStudyIdLink": "https://reporter.nih.gov/quickSearch/5R21AT005249",
-    "IPDSharingInfoType": "ANALYTIC_CODE",
-    "IPDSharingTimeFrame": "With publication of results",
-    "IPDSharingAccessCriteria": "Acess to analytic code will be detailed in the final publication",
-    "DispFirstSubmitDate": "2015-10-08",
-    "DispFirstSubmitQCDate": "2015-10-08",
-    "DispFirstPostDate": "2015-11-01",
-    "DispFirstPostDateType": "ESTIMATED",
-    "RemovedCountry": "Germany",
-    "UnpostedResponsibleParty": "Abbott Medical Devices",
-    "EstimatedResultsFirstSubmitDate": "2022-12-07",
-    "FirstMCPPostDate": "2023-07-12",
-    "FirstMCPPostDateType": "ACTUAL",
-    "IPDSharingURL": "https://vivli.org/members/ourmembers/",
-    "DelayedPosting": true,
-    "ExpandedAccessNCTId": "NCT04360005",
-    "ExpandedAccessStatusForNCTId": "AVAILABLE",
-    "FlowTypeUnitsAnalyzed": "Lesions",
-    "LargeDocNoSAP": true
+    "Collaborators": [
+        {
+            "CollaboratorName": "Ottawa Heart Institute Research Corporation",
+            "CollaboratorClass": "OTHER"
+        }
+    ],
+    "PrimaryOutcomes": [
+        {
+            "PrimaryOutcomeMeasure": "Numeric Pain Rating Scale",
+            "PrimaryOutcomeDescription": "Perceived pain. Self-perceived pain intensity will be evaluated by a 0 to 10 Numeric Pain Rating Scale (NPRS), where 0 denotes no pain and 10 denotes the maximum possible pain.",
+            "PrimaryOutcomeTimeFrame": "pre-treatment, 1 week, 4 week, 12 week."
+        }
+    ],
+    "SecondaryOutcomes": [
+        {
+            "SecondaryOutcomeMeasure": "Algometry",
+            "SecondaryOutcomeDescription": "Pain threshold to pressure at specific tender points of the shoulder: infraspinatus, deltoid and trapezius. PPT levels defined as the minimum pressure required to evoke pain will be assessed using a portable electronic pressure algometer. Change from baseline on algometry. The units of measurement of pressure pain will be Kg/cm2.",
+            "SecondaryOutcomeTimeFrame": "pre-treatment, 1 week, 4 week, 12 week."
+        }
+    ],
+    "OverallOfficials": [
+        {
+            "OverallOfficialName": "Douglas K trask, MD. Ph.D.",
+            "OverallOfficialAffiliation": "University of Iowa",
+            "OverallOfficialRole": "PRINCIPAL_INVESTIGATOR"
+        }
+    ],
+    "Locations": [
+        {
+            "LocationFacility": "University of Iowa Department of Otolaryngology",
+            "LocationCity": "Iowa City",
+            "LocationState": "Iowa",
+            "LocationZip": "52242",
+            "LocationCountry": "United States"
+        }
+    ],
+    "ArmGroups": [
+        {
+            "ArmGroupLabel": "USUAL PHYSIOTHERAPY",
+            "ArmGroupType": "ACTIVE_COMPARATOR",
+            "ArmGroupDescription": "the usual treatment of the center consisting of manual therapy, exercise and thermotherapy will be performed.",
+            "ArmGroupInterventionName": "Procedure: common Physical therapy"
+        }
+    ],
+    "Interventions": [
+        {
+            "InterventionType": "DRUG",
+            "InterventionName": "Esomeprazole (Nexium)"
+        }
+    ],
+    "StudyReferences": [
+        {
+            "ReferencePMID": "16845694",
+            "ReferenceType": "BACKGROUND",
+            "ReferenceCitation": "Hartel M, Hoffmann G, Wente MN, Martignoni ME, Buchler MW, Friess H. Randomized clinical trial of the influence of local water-filtered infrared A irradiation on wound healing after abdominal surgery. Br J Surg. 2006 Aug;93(8):952-60. doi: 10.1002/bjs.5429."
+        }
+    ],
+    "ConditionMeshes": [
+        {
+            "ConditionMeshId": "D000006258",
+            "ConditionMeshTerm": "Head and Neck Neoplasms"
+        }
+    ],
+    "ConditionAncestors": [
+        {
+            "ConditionAncestorId": "D000009371",
+            "ConditionAncestorTerm": "Neoplasms by Site"
+        }
+    ],
+    "ConditionBrowseLeaves": [
+        {
+            "ConditionBrowseLeafId": "M9348",
+            "ConditionBrowseLeafName": "Head and Neck Neoplasms",
+            "ConditionBrowseLeafAsFound": "Head and Neck Cancer",
+            "ConditionBrowseLeafRelevance": "HIGH"
+        }
+    ],
+    "ConditionBrowseBranches": [
+        {
+            "ConditionBrowseBranchAbbrev": "BC04",
+            "ConditionBrowseBranchName": "Neoplasms"
+        }
+    ],
+    "InterventionMeshes": [
+        {
+            "InterventionMeshId": "D000064098",
+            "InterventionMeshTerm": "Esomeprazole"
+        }
+    ],
+    "InterventionAncestors": [
+        {
+            "InterventionAncestorId": "D000000897",
+            "InterventionAncestorTerm": "Anti-Ulcer Agents"
+        }
+    ],
+    "InterventionBrowseLeaves": [
+        {
+            "InterventionBrowseLeafId": "M30204",
+            "InterventionBrowseLeafName": "Esomeprazole",
+            "InterventionBrowseLeafAsFound": "In the morning",
+            "InterventionBrowseLeafRelevance": "HIGH"
+        }
+    ],
+    "InterventionBrowseBranches": [
+        {
+            "InterventionBrowseBranchAbbrev": "Gast",
+            "InterventionBrowseBranchName": "Gastrointestinal Agents"
+        }
+    ],
+    "protocolSection.outcomesModule.otherOutcomes": [
+        {
+            "OtherOutcomeMeasure": "Change in Prenatal Distress at 12-weeks post-randomization",
+            "OtherOutcomeDescription": "The Prenatal Distress Scale (range: 0-35) is an 18-item scale that assesses the things that are worrisome or bothersome about their pregnancy in which a higher score indicates a worse outcome.",
+            "OtherOutcomeTimeFrame": "12-weeks post-randomization"
+        }
+    ],
+    "protocolSection.contactsLocationsModule.centralContacts": [
+        {
+            "CentralContactName": "Adolfo Rosado Portillo",
+            "CentralContactRole": "CONTACT",
+            "CentralContactPhone": "605663879",
+            "CentralContactEMail": "adolforosadoportillo@gmail.com"
+        }
+    ],
+    "resultsSection.participantFlowModule.groups": [
+        {
+            "FlowGroupId": "FG000",
+            "FlowGroupTitle": "Blinded Active Vaccine 2",
+            "FlowGroupDescription": "Participants who experienced a systemic allergic reaction after receiving their first full dose of the Pfizer-BioNTech or Moderna COVID-19 vaccine receives one dose of the active mRNA COVID-19 vaccine (0.3mL) intramuscularly followed by a wash out period of 24 hours then crossover to receive placebo (0.3 mL normal saline) intramuscularly."
+        }
+    ],
+    "resultsSection.participantFlowModule.periods": [
+        {
+            "FlowPeriodTitle": "First Period of Crossover",
+            "resultsSection.participantFlowModule.periods.milestones": [
+                {
+                    "FlowMilestoneType": "STARTED",
+                    "resultsSection.participantFlowModule.periods.milestones.achievements": [
+                        {
+                            "FlowAchievementGroupId": "FG000",
+                            "FlowAchievementNumSubjects": "8"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "resultsSection.baselineCharacteristicsModule.groups": [
+        {
+            "BaselineGroupId": "BG000",
+            "BaselineGroupTitle": "Blinded Active Vaccine 2",
+            "BaselineGroupDescription": "Participants who experienced a systemic allergic reaction after receiving their first full dose of the Pfizer-BioNTech or Moderna COVID-19 vaccine receives one dose of the active mRNA COVID-19 vaccine (0.3mL) intramuscularly followed by a wash out period of 24 hours then crossover to receive placebo (0.3 mL normal saline) intramuscularly."
+        }
+    ],
+    "resultsSection.baselineCharacteristicsModule.denoms": [
+        {
+            "BaselineDenomUnits": "Participants",
+            "resultsSection.baselineCharacteristicsModule.denoms.counts": [
+                {
+                    "BaselineDenomCountGroupId": "BG000",
+                    "BaselineDenomCountValue": "8"
+                },
+                {
+                    "BaselineDenomCountGroupId": "BG001",
+                    "BaselineDenomCountValue": "8"
+                },
+                {
+                    "BaselineDenomCountGroupId": "BG002",
+                    "BaselineDenomCountValue": "16"
+                }
+            ]
+        }
+    ],
+    "resultsSection.baselineCharacteristicsModule.measures": [
+        {
+            "BaselineMeasureTitle": "Age, Categorical",
+            "BaselineMeasureParamType": "COUNT_OF_PARTICIPANTS",
+            "BaselineMeasureUnitOfMeasure": "Participants",
+            "resultsSection.baselineCharacteristicsModule.measures.classes": [
+                {
+                    "resultsSection.baselineCharacteristicsModule.measures.classes.categories": [
+                        {
+                            "BaselineCategoryTitle": "<=18 years",
+                            "resultsSection.baselineCharacteristicsModule.measures.classes.categories.measurements": [
+                                {
+                                    "BaselineMeasurementGroupId": "BG000",
+                                    "BaselineMeasurementValue": "0"
+                                },
+                                {
+                                    "BaselineMeasurementGroupId": "BG001",
+                                    "BaselineMeasurementValue": "0"
+                                },
+                                {
+                                    "BaselineMeasurementGroupId": "BG002",
+                                    "BaselineMeasurementValue": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "BaselineCategoryTitle": "Between 18 and 65 years",
+                            "resultsSection.baselineCharacteristicsModule.measures.classes.categories.measurements": [
+                                {
+                                    "BaselineMeasurementGroupId": "BG000",
+                                    "BaselineMeasurementValue": "8"
+                                },
+                                {
+                                    "BaselineMeasurementGroupId": "BG001",
+                                    "BaselineMeasurementValue": "7"
+                                },
+                                {
+                                    "BaselineMeasurementGroupId": "BG002",
+                                    "BaselineMeasurementValue": "15"
+                                }
+                            ]
+                        },
+                        {
+                            "BaselineCategoryTitle": ">=65 years",
+                            "resultsSection.baselineCharacteristicsModule.measures.classes.categories.measurements": [
+                                {
+                                    "BaselineMeasurementGroupId": "BG000",
+                                    "BaselineMeasurementValue": "0"
+                                },
+                                {
+                                    "BaselineMeasurementGroupId": "BG001",
+                                    "BaselineMeasurementValue": "1"
+                                },
+                                {
+                                    "BaselineMeasurementGroupId": "BG002",
+                                    "BaselineMeasurementValue": "1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures": [
+        {
+            "OutcomeMeasureType": "PRIMARY",
+            "OutcomeMeasureTitle": "Proportion of Participants Who Had Recurrent Systemic Allergic Reaction to Vaccine",
+            "OutcomeMeasureDescription": "Proportion of participants who had recurrent systemic allergic reaction following active COVID-19 vaccine dose in this study. Allergic reactions were graded using Consortium of Food Allergy Research (CoFAR) grading scale (Version 3.0) where Grade 1 (mild) = mild symptoms involving one organ system (skin, conjunctiva, upper respiratory or gastrointestinal); Grade 2 (moderate) = mild symptoms involving \u22652 organ system (skin, conjunctiva, upper respiratory or gastrointestinal); Grade 3 (severe)= moderate to severe cardiovascular, lower respiratory or gastrointestinal symptoms, responsive to treatment and/or without end-organ dysfunction; Grade 4 = severe cardiovascular or lower respiratory symptoms, with end-organ dysfunction and/or refractory to treatment; and Grade 5 = death.\n\nSystemic allergic reaction was defined as CoFAR grade 1 reaction with elevated tryptase or CoFAR Grade \u2265 2 reaction irrespective of tryptase levels.",
+            "OutcomeMeasurePopulationDescription": "The analysis included participants who received the active study vaccine in the crossover phase as pre-specified in the protocol to only collect and report data from the active vaccination.",
+            "OutcomeMeasureReportingStatus": "POSTED",
+            "OutcomeMeasureParamType": "NUMBER",
+            "OutcomeMeasureDispersionType": "95% Confidence Interval",
+            "OutcomeMeasureUnitOfMeasure": "Proportion of participants",
+            "OutcomeMeasureTimeFrame": "Within the 3-hour post-vaccine observation period",
+            "resultsSection.outcomeMeasuresModule.outcomeMeasures.groups": [
+                {
+                    "OutcomeGroupId": "OG000",
+                    "OutcomeGroupTitle": "Blinded Active Vaccine 2",
+                    "OutcomeGroupDescription": "Participants who experienced a systemic allergic reaction after receiving their first full dose of the Pfizer-BioNTech or Moderna COVID-19 vaccine receives one dose of the active mRNA COVID-19 vaccine (0.3mL) intramuscularly"
+                }
+            ],
+            "resultsSection.outcomeMeasuresModule.outcomeMeasures.denoms": [
+                {
+                    "OutcomeDenomUnits": "Participants",
+                    "resultsSection.outcomeMeasuresModule.outcomeMeasures.denoms.counts": [
+                        {
+                            "OutcomeDenomCountGroupId": "OG000",
+                            "OutcomeDenomCountValue": "16"
+                        }
+                    ]
+                }
+            ],
+            "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes": [
+                {
+                    "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes.categories": [
+                        {
+                            "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes.categories.measurements": [
+                                {
+                                    "OutcomeMeasurementGroupId": "OG000",
+                                    "OutcomeMeasurementValue": "0.125",
+                                    "OutcomeMeasurementLowerLimit": "0.016",
+                                    "OutcomeMeasurementUpperLimit": "0.383"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "resultsSection.adverseEventsModule.eventGroups": [
+        {
+            "EventGroupId": "EG000",
+            "EventGroupTitle": "Blinded Active Vaccine 2",
+            "EventGroupDescription": "Participants who experienced a systemic allergic reaction after receiving their first full dose of the Pfizer-BioNTech or Moderna COVID-19 vaccine receives one dose of the active mRNA COVID-19 vaccine (0.3mL) intramuscularly",
+            "EventGroupDeathsNumAffected": 0,
+            "EventGroupDeathsNumAtRisk": 16,
+            "EventGroupSeriousNumAffected": 0,
+            "EventGroupSeriousNumAtRisk": 16,
+            "EventGroupOtherNumAffected": 3,
+            "EventGroupOtherNumAtRisk": 16
+        }
+    ],
+    "resultsSection.adverseEventsModule.otherEvents": [
+        {
+            "OtherEventTerm": "Anaemia",
+            "OtherEventOrganSystem": "Blood and lymphatic system disorders",
+            "OtherEventAssessmentType": "SYSTEMATIC_ASSESSMENT",
+            "resultsSection.adverseEventsModule.otherEvents.stats": [
+                {
+                    "OtherEventStatsGroupId": "EG000",
+                    "OtherEventStatsNumAffected": 0,
+                    "OtherEventStatsNumAtRisk": 16
+                },
+                {
+                    "OtherEventStatsGroupId": "EG001",
+                    "OtherEventStatsNumAffected": 0,
+                    "OtherEventStatsNumAtRisk": 16
+                },
+                {
+                    "OtherEventStatsGroupId": "EG002",
+                    "OtherEventStatsNumEvents": 2,
+                    "OtherEventStatsNumAffected": 2,
+                    "OtherEventStatsNumAtRisk": 16
+                },
+                {
+                    "OtherEventStatsGroupId": "EG003",
+                    "OtherEventStatsNumEvents": 5,
+                    "OtherEventStatsNumAffected": 4,
+                    "OtherEventStatsNumAtRisk": 16
+                }
+            ]
+        }
+    ],
+    "protocolSection.referencesModule.seeAlsoLinks": [
+        {
+            "SeeAlsoLinkLabel": "NIH Clinical Center Detailed Web Page",
+            "SeeAlsoLinkURL": "https://clinicalstudies.info.nih.gov/cgi/detail.cgi?B_000460-I.html"
+        }
+    ],
+    "resultsSection.adverseEventsModule.seriousEvents": [
+        {
+            "SeriousEventTerm": "Anaemia",
+            "SeriousEventOrganSystem": "Blood and lymphatic system disorders",
+            "SeriousEventSourceVocabulary": "MedDRA 14.1",
+            "SeriousEventAssessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+            "resultsSection.adverseEventsModule.seriousEvents.stats": [
+                {
+                    "SeriousEventStatsGroupId": "EG000",
+                    "SeriousEventStatsNumAffected": 2,
+                    "SeriousEventStatsNumAtRisk": 228
+                },
+                {
+                    "SeriousEventStatsGroupId": "EG001",
+                    "SeriousEventStatsNumAffected": 0,
+                    "SeriousEventStatsNumAtRisk": 226
+                }
+            ]
+        }
+    ],
+    "SecondaryIdInfos": [
+        {
+            "SecondaryId": "CTCRI 019826",
+            "SecondaryIdType": "OTHER_GRANT",
+            "SecondaryIdDomain": "Canadian Tobacco Control Research Initiative"
+        }
+    ],
+    "documentSection.largeDocumentModule.largeDocs": [
+        {
+            "LargeDocTypeAbbrev": "Prot_SAP",
+            "LargeDocHasProtocol": true,
+            "LargeDocHasSAP": true,
+            "LargeDocHasICF": false,
+            "LargeDocLabel": "Study Protocol and Statistical Analysis Plan",
+            "LargeDocDate": "2022-10-19",
+            "LargeDocUploadDate": "2023-06-07T12:03",
+            "LargeDocFilename": "Prot_SAP_000.pdf",
+            "LargeDocSize": 449133
+        }
+    ],
+    "annotationSection.annotationModule.unpostedAnnotation.unpostedEvents": [
+        {
+            "UnpostedEventType": "RELEASE",
+            "UnpostedEventDate": "2022-12-07"
+        }
+    ],
+    "derivedSection.miscInfoModule.submissionTracking.submissionInfos": [
+        {
+            "SubmissionReleaseDate": "2022-12-07",
+            "SubmissionResetDate": "2023-10-10"
+        }
+    ],
+    "protocolSection.referencesModule.availIpds": [
+        {
+            "AvailIPDId": "AVD105248",
+            "AvailIPDType": "Dataset Specification",
+            "AvailIPDURL": "https://www.clinicalstudydatarequest.com",
+            "AvailIPDComment": "For additional information about this study please refer to the GSK Clinical Study Register"
+        }
+    ]
 }
