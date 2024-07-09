@@ -196,40 +196,6 @@
                                     "BaselineMeasurementValue": "0"
                                 }
                             ]
-                        },
-                        {
-                            "BaselineCategoryTitle": "Between 18 and 65 years",
-                            "resultsSection.baselineCharacteristicsModule.measures.classes.categories.measurements": [
-                                {
-                                    "BaselineMeasurementGroupId": "BG000",
-                                    "BaselineMeasurementValue": "8"
-                                },
-                                {
-                                    "BaselineMeasurementGroupId": "BG001",
-                                    "BaselineMeasurementValue": "7"
-                                },
-                                {
-                                    "BaselineMeasurementGroupId": "BG002",
-                                    "BaselineMeasurementValue": "15"
-                                }
-                            ]
-                        },
-                        {
-                            "BaselineCategoryTitle": ">=65 years",
-                            "resultsSection.baselineCharacteristicsModule.measures.classes.categories.measurements": [
-                                {
-                                    "BaselineMeasurementGroupId": "BG000",
-                                    "BaselineMeasurementValue": "0"
-                                },
-                                {
-                                    "BaselineMeasurementGroupId": "BG001",
-                                    "BaselineMeasurementValue": "1"
-                                },
-                                {
-                                    "BaselineMeasurementGroupId": "BG002",
-                                    "BaselineMeasurementValue": "1"
-                                }
-                            ]
                         }
                     ]
                 }

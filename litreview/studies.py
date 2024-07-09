@@ -38,6 +38,25 @@ JSON_TO_TABLE = {
     "resultsSection.participantFlowModule.periods": "FlowPeriods",
     "resultsSection.participantFlowModule.periods.milestones": "FlowMilestones",
     "resultsSection.participantFlowModule.periods.milestones.achievements": "FlowAchievements",
+    "resultsSection.baselineCharacteristicsModule.denoms": "BaselineDenoms",
+    "resultsSection.baselineCharacteristicsModule.denoms.counts": "BaselineDenomCounts",
+    "resultsSection.baselineCharacteristicsModule.measures": "BaselineMeasures",
+    "resultsSection.baselineCharacteristicsModule.measures.classes": "BaselineClasses",
+    "resultsSection.baselineCharacteristicsModule.measures.classes.categories": "BaselineCategories",
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures": "OutcomeMeasures",
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures.groups": "OutcomeGroups",
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures.denoms": "OutcomeDenoms",
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures.denoms.counts": "OutcomeDenomCounts",
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes": "OutcomeClasses",
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes.categories": "OutcomeCategories",
+    "resultsSection.outcomeMeasuresModule.outcomeMeasures.classes.categories.measurements": "OutcomeMeasurements",
+    "resultsSection.adverseEventsModule.otherEvents": "OtherEvents",
+    "resultsSection.adverseEventsModule.otherEvents.stats": "OtherEventStats",
+    "resultsSection.adverseEventsModule.seriousEvents": "SeriousEvents",
+    "resultsSection.adverseEventsModule.seriousEvents.stats": "SeriousEventStats",
+    "protocolSection.contactsLocationsModule.centralContacts": "CentralContacts",
+    "resultsSection.baselineCharacteristicsModule.measures.classes.categories.measurements": "BaselineMeasurements",
+    "resultsSection.adverseEventsModule.eventGroups": "EventGroups",
 }
 
 
@@ -50,21 +69,12 @@ class Studies:
         self.num_studies = num_studies
         self._field_to_piece = self._get_field_to_piece()
         self._studies = self._get_studies_generator()
-        self._structure = {}
 
     def get_studies(self):
         """
         Retrieve a list of normalized studies.
         """
-        res = []
-        for study in next(self._studies, []):
-            processed_study = self._process_study(study)
-            self._structure |= processed_study
-            res.append(processed_study)
-        # res = [self._process_study(study) for study in next(self._studies, [])]
-        with open("./files/structure.json", "w") as f:
-            json.dump(self._structure, f)
-        return res
+        return [self._process_study(study) for study in next(self._studies, [])]
 
     def get_total_studies(self):
         """
