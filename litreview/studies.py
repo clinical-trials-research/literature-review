@@ -35,6 +35,9 @@ JSON_TO_TABLE = {
     "annotationSection.annotationModule.unpostedAnnotation.unpostedEvents": "UnpostedEvents",
     "derivedSection.miscInfoModule.submissionTracking.submissionInfos": "SubmissionInfos",
     "protocolSection.referencesModule.availIpds": "AvailIPDs",
+    "resultsSection.participantFlowModule.periods": "FlowPeriods",
+    "resultsSection.participantFlowModule.periods.milestones": "FlowMilestones",
+    "resultsSection.participantFlowModule.periods.milestones.achievements": "FlowAchievements",
 }
 
 
