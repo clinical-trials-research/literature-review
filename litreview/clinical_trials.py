@@ -1,3 +1,4 @@
+import re
 import sqlite3
 from typing import Generator
 
@@ -22,13 +23,30 @@ class ClinicalTrials:
         self._studies_generator = self._create_studies_generator()
         self._field_to_piece = self._get_piece_map()
 
-    def update_database(self) -> None:
+    def update_database(self, _table="Study") -> None:
         """
-        Update the database with the next batch of studies.
+        We probably need to use recursion to update the database.
+        Should I combine this method with normalize method?
+
+        Args:
+            _table (str, optional): _description_. Defaults to "Study".
+
+        Raises:
+            Exception: _description_
         """
         for study in next(self._studies_generator):
             for key, value in study.items():
-                pass
+                if isinstance(value, str):
+                    if re.match(r"\d{4}-\d{2}(-\d{2})?", value):
+                        pass
+                    else:
+                        pass
+                elif isinstance(value, bool):
+                    pass
+                elif isinstance(value, list):
+                    pass
+                else:
+                    raise Exception(f"Woah, weird type: {value}")
 
     def get_studies(self) -> list[dict]:
         """
