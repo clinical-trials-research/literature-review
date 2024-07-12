@@ -140,14 +140,21 @@ class Studies:
         flattened = {}
         for key, value in data.items():
             new_key = f"{_parent_key}.{key}" if _parent_key else key
+
             if new_key in self._field_to_piece:
                 piece_name = self._field_to_piece[new_key]
+                # Converts list (e.g. of keywords) to a string.
                 if isinstance(value, list):
                     value = ", ".join(value)
                 flattened[piece_name] = value
+
+            # Recursively flatten study if value is a dictionary.
             elif isinstance(value, dict):
                 flattened |= self._process_study(value, new_key)
+
+            # If value is a list of dictionaries, recursively flatten each one.
             elif isinstance(value, list) and all(isinstance(i, dict) for i in value):
                 table_key = JSON_TO_TABLE.get(new_key, new_key)
                 flattened[table_key] = [self._process_study(i, new_key) for i in value]
+
         return flattened
