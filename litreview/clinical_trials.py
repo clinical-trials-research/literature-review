@@ -1,8 +1,10 @@
 import re
 import sqlite3
+from functools import reduce
 from typing import Generator
 
 import httpx
+from altair import data_transformers
 
 API_BASE = "https://clinicaltrials.gov/api/v2"
 API_STUDIES = API_BASE + "/studies"
@@ -23,31 +25,6 @@ class ClinicalTrials:
         self._studies_generator = self._create_studies_generator()
         self._field_to_piece = self._get_piece_map()
 
-    def update_database(self, _table="Study") -> None:
-        """
-        We probably need to use recursion to update the database.
-        Should I combine this method with normalize method?
-
-        Args:
-            _table (str, optional): _description_. Defaults to "Study".
-
-        Raises:
-            Exception: _description_
-        """
-        for study in next(self._studies_generator):
-            for key, value in study.items():
-                if isinstance(value, str):
-                    if re.match(r"\d{4}-\d{2}(-\d{2})?", value):
-                        pass
-                    else:
-                        pass
-                elif isinstance(value, bool):
-                    pass
-                elif isinstance(value, list):
-                    pass
-                else:
-                    raise Exception(f"Woah, weird type: {value}")
-
     def get_studies(self) -> list[dict]:
         """
         Retrieve a list of normalized studies.
@@ -58,6 +35,91 @@ class ClinicalTrials:
         return [
             self._normalize_study(study) for study in next(self._studies_generator, [])
         ]
+
+    def create_database(
+        self,
+        schema: dict,
+        *,
+        _table="Study",
+        _prev_table=None,
+        _primary="NCTId",
+        _prev_primary=None,
+        _primary_datatype="TEXT",
+    ) -> None:
+        """
+        Recursively create database based on schema provided.
+
+        Args:
+            schema (dict): Database schema, where schema[field] = type.
+            _table_name (str, optional): Table name to insert columns / values.
+                                         Defaults to "Study".
+        """
+        columns = []
+
+        if not _primary:
+            _primary = "Id"
+            columns.append(f"{_primary} INTEGER AUTO_INCREMENT PRIMARY KEY")
+
+        for field, datatype in schema.items():
+            if isinstance(datatype, dict):
+                nested_table_name = field.replace(".", "")
+                self.create_database(
+                    datatype,
+                    _table=nested_table_name,
+                    _prev_table=_table,
+                    _primary=None,
+                    _prev_primary=_primary,
+                    _primary_datatype="INTEGER",
+                )
+            elif field == _primary:
+                columns.append(f"{field} {datatype} PRIMARY KEY")
+            else:
+                columns.append(f"{field} {datatype}")
+
+        if _prev_table and _prev_primary:
+            foreign_key = f"{_prev_table}Id"
+            columns.append(f"{foreign_key} {_primary_datatype}")
+            columns.append(
+                f"FOREIGN KEY ({foreign_key}) REFERENCES {_prev_table} ({_prev_primary})"
+            )
+
+        try:
+            query = f"CREATE TABLE IF NOT EXISTS {_table} ({', '.join(columns)});"
+            self.cursor.execute(query)
+        except Exception as e:
+            print(e, query)
+            print()
+
+        self.connection.commit()
+
+    def update_schema(self, study: dict, schema={}) -> None:
+        """
+        Given a study, update the database schema.
+
+        Args:
+            study (dict): Clinical trials study.
+        """
+        for key, value in study.items():
+            if key in schema:
+                continue
+            elif isinstance(value, str):
+                if re.match(r"\d{4}-\d{2}(-\d{2})?", value):
+                    schema[key] = "DATE"
+                else:
+                    schema[key] = "TEXT"
+            elif isinstance(value, bool):
+                schema[key] = "BOOLEAN"
+            elif isinstance(value, int):
+                schema[key] = "INTEGER"
+            elif isinstance(value, list):
+                # Reduce list of dictionaries to 1 dictionary.
+                schema[key] = self.update_schema(
+                    reduce(lambda a, b: a | b, value), schema.get(key, {})
+                )
+            else:
+                raise Exception(f"Woah, weird type: {value}")
+
+        return schema
 
     def _normalize_study(self, study: dict, _parent_key="") -> dict:
         """
