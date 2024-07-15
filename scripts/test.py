@@ -1,10 +1,10 @@
-import json
-
 from litreview import ClinicalTrials
 
 trials = ClinicalTrials(10)
+studies = trials.get_studies()
+for study in studies:
+    trials._update_database(study)
 
-# studies = trials.get_studies()
 # schema = {}
 # for study in studies:
 #     schema = trials.update_schema(study, schema)
@@ -12,7 +12,7 @@ trials = ClinicalTrials(10)
 # with open("schema.json", "w") as f:
 #     json.dump(schema, f)
 
-with open("schema.json") as f:
-    schema = json.load(f)
+# with open("schema.json") as f:
+#     schema = json.load()
 
-trials.create_database(schema)
+# trials.create_database(schema)

@@ -4,7 +4,6 @@ from functools import reduce
 from typing import Generator
 
 import httpx
-from altair import data_transformers
 
 API_BASE = "https://clinicaltrials.gov/api/v2"
 API_STUDIES = API_BASE + "/studies"
@@ -36,7 +35,45 @@ class ClinicalTrials:
             self._normalize_study(study) for study in next(self._studies_generator, [])
         ]
 
-    def create_database(
+    def create_database(self) -> None:
+        """
+        Utility method to create schema and create database.
+        """
+        schema = {}
+        for study in self.get_studies():
+            schema = self._update_schema(study, schema)
+        self._create_database(schema)
+
+    def _update_database(self, study: dict, _table="Study") -> None:
+        """
+        Recursively update a single study into the database.
+
+        Args:
+            study (dict): Single processed clinical trials study.
+        """
+        columns = []
+        values = []
+
+        for field, value in study.items():
+            if isinstance(value, list):
+                pass
+            else:
+                if isinstance(value, str) and not re.match(
+                    r"\d{4}-\d{2}(-\d{2})?", value
+                ):
+                    value.replace("'", '"')
+                    value = f"'{value}'"
+                columns.append(str(field))
+                values.append(str(value))
+
+        query = (
+            f"INSERT INTO {_table} ({', '.join(columns)}) VALUES ({', '.join(values)});"
+        )
+        print(query)
+        self.cursor.execute(query)
+        self.connection.commit()
+
+    def _create_database(
         self,
         schema: dict,
         *,
@@ -53,6 +90,11 @@ class ClinicalTrials:
             schema (dict): Database schema, where schema[field] = type.
             _table_name (str, optional): Table name to insert columns / values.
                                          Defaults to "Study".
+            _prev_table (str, optional): Previous table name. Defaults to None.
+            _primary (str, optional): Primary key. Defaults to "NCTId".
+            _prev_primary (str, optional): Previous primary key. Defaults to None.
+            _primary_datatype (str, optional): Primary key datatype. Defaults
+                                               to "TEXT".
         """
         columns = []
 
@@ -62,10 +104,9 @@ class ClinicalTrials:
 
         for field, datatype in schema.items():
             if isinstance(datatype, dict):
-                nested_table_name = field.replace(".", "")
-                self.create_database(
+                self._create_database(
                     datatype,
-                    _table=nested_table_name,
+                    _table=field,
                     _prev_table=_table,
                     _primary=None,
                     _prev_primary=_primary,
@@ -92,7 +133,7 @@ class ClinicalTrials:
 
         self.connection.commit()
 
-    def update_schema(self, study: dict, schema={}) -> None:
+    def _update_schema(self, study: dict, schema={}) -> None:
         """
         Given a study, update the database schema.
 
@@ -113,7 +154,7 @@ class ClinicalTrials:
                 schema[key] = "INTEGER"
             elif isinstance(value, list):
                 # Reduce list of dictionaries to 1 dictionary.
-                schema[key] = self.update_schema(
+                schema[key] = self._update_schema(
                     reduce(lambda a, b: a | b, value), schema.get(key, {})
                 )
             else:
@@ -150,7 +191,7 @@ class ClinicalTrials:
 
             # If value is a list of dictionaries, recursively flatten each one.
             elif isinstance(value, list) and all(isinstance(i, dict) for i in value):
-                flattened[_parent_key] = [
+                flattened[_parent_key.replace(".", "")] = [
                     self._normalize_study(i, new_key) for i in value
                 ]
 
