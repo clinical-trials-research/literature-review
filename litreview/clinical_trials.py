@@ -1,6 +1,8 @@
+import json
 import re
 import sqlite3
 from functools import reduce
+from pathlib import Path
 from typing import Generator
 
 import httpx
@@ -16,13 +18,28 @@ class ClinicalTrials:
     Provides an interface to populate a SQL database with clinical trial.
     """
 
-    def __init__(self, num_studies=1000, connection=None) -> None:
+    def __init__(
+        self, num_studies=1000, connection=None, schema_directory="./files/schema.json"
+    ) -> None:
+        """
+        Initialize the ClinicalTrials interface.
+
+        Args:
+            num_studies (int, optional): The number of studies to generate
+                                         with each call. Defaults to 1000.
+            connection (_type_, optional): SQL database connection. Defaults
+                                           to None.
+            schema_directory (str, optional): Directory to load database schema
+                                              from. Defaults to "./files/schema.json".
+        """
         self.num_studies = num_studies
+        self.schema_directory = schema_directory
         if not connection:
             self.connection = sqlite3.connect("clinical_trials.db")
         self.cursor = self.connection.cursor()
         self._studies_generator = self._create_studies_generator()
         self._field_to_piece = self._get_piece_map()
+        self._schema = self._load_schema()
 
     def get_studies(self) -> list[dict]:
         """
@@ -35,16 +52,15 @@ class ClinicalTrials:
             self._normalize_study(study) for study in next(self._studies_generator, [])
         ]
 
-    def create_database(self) -> None:
+    def update_database(self) -> None:
         """
-        Utility method to create schema and create database.
+        Creates and updates the database with num_studies for each call.
         """
-        schema = {}
+        self._create_database(self._schema)
         for study in self.get_studies():
-            schema = self._update_schema(study, schema)
-        self._create_database(schema)
+            self._update_database(study, self._schema)
 
-    def _update_database(self, study: dict, _table="Study") -> None:
+    def _update_database(self, study: dict, schema: dict, _table="Study") -> None:
         """
         Recursively update a single study into the database.
 
@@ -56,13 +72,12 @@ class ClinicalTrials:
 
         for field, value in study.items():
             if isinstance(value, list):
-                pass
+                for entry in value:
+                    self._update_database(entry, schema[field], _table=field)
             else:
-                if isinstance(value, str) and not re.match(
-                    r"\d{4}-\d{2}(-\d{2})?", value
-                ):
-                    value.replace("'", '"')
-                    value = f"'{value}'"
+                if schema[field] == "TEXT":
+                    value = value.replace('"', "\\'").replace("'", "\\'")
+                    value = f'"{value}"'
                 columns.append(str(field))
                 values.append(str(value))
 
@@ -124,14 +139,29 @@ class ClinicalTrials:
                 f"FOREIGN KEY ({foreign_key}) REFERENCES {_prev_table} ({_prev_primary})"
             )
 
-        try:
-            query = f"CREATE TABLE IF NOT EXISTS {_table} ({', '.join(columns)});"
-            self.cursor.execute(query)
-        except Exception as e:
-            print(e, query)
-            print()
+        query = f"CREATE TABLE IF NOT EXISTS {_table} ({', '.join(columns)});"
+        self.cursor.execute(query)
 
         self.connection.commit()
+
+    def _load_schema(self) -> None:
+        """
+        Look for schema in given/default directory. If not found, generate and
+        load it.
+        """
+        schema_path = Path(self.schema_directory)
+
+        # If schema.json doesn't exist, create it.
+        if not schema_path.is_file():
+            schema = {}
+            for study in self.get_studies():
+                schema = self._update_schema(study, schema)
+            with open(self.schema_directory, "w") as f:
+                json.dump(schema, f)
+        else:
+            with open(self.schema_directory) as f:
+                schema = json.load(f)
+        return schema
 
     def _update_schema(self, study: dict, schema={}) -> None:
         """
