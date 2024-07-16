@@ -15,11 +15,15 @@ API_FIELD_VALUES = API_BASE + "/stats/field/values"
 
 class ClinicalTrials:
     """
-    Provides an interface to populate a SQL database with clinical trial.
+    Provides an interface to manage a clinical trial database.
     """
 
     def __init__(
-        self, num_studies=1000, connection=None, schema_directory="./files/schema.json"
+        self,
+        *,
+        num_studies=1000,
+        connection=None,
+        schema_directory="./files/schema.json",
     ) -> None:
         """
         Initialize the ClinicalTrials interface.
@@ -39,6 +43,7 @@ class ClinicalTrials:
         self.cursor = self.connection.cursor()
         self._studies_generator = self._create_studies_generator()
         self._field_to_piece = self._get_piece_map()
+        self._in_schema = {piece: False for piece in self._field_to_piece.values()}
         self._schema = self._load_schema()
 
     def get_studies(self) -> list[dict]:
@@ -153,9 +158,17 @@ class ClinicalTrials:
 
         # If schema.json doesn't exist, create it.
         if not schema_path.is_file():
+            # Keep updating until all the fields have been added to the schema.
             schema = {}
-            for study in self.get_studies():
-                schema = self._update_schema(study, schema)
+            while not all(self._in_schema.values()):
+                fields_remaining = len(
+                    [key for key, value in self._in_schema.items() if not value]
+                )
+                print(
+                    f"Fields remaining to be updated to the schema: {fields_remaining}"
+                )
+                for study in self.get_studies():
+                    schema = self._update_schema(study, schema)
             with open(self.schema_directory, "w") as f:
                 json.dump(schema, f)
         else:
@@ -189,6 +202,7 @@ class ClinicalTrials:
                 )
             else:
                 raise Exception(f"Woah, weird type: {value}")
+            self._in_schema[key] = True
 
         return schema
 
@@ -252,7 +266,7 @@ class ClinicalTrials:
                 data = response.json()
                 next_page_token = data.get("nextPageToken")
 
-    def _get_piece_map(self):
+    def _get_piece_map(self) -> dict:
         """
         Retruns a dictionary which maps the field name to the more concise
         piece name of clinical trials.
