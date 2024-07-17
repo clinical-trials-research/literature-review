@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Generator
 
 import httpx
+from tqdm import tqdm
 
 API_BASE = "https://clinicaltrials.gov/api/v2"
 API_STUDIES = API_BASE + "/studies"
@@ -61,28 +62,51 @@ class ClinicalTrials:
         Creates and updates the database with num_studies for each call.
         """
         self._create_database(self._schema)
-        for study in self.get_studies():
+
+        # tqdm for progress bar!
+        for study in tqdm(self.get_studies()):
             self._update_database(study, self._schema)
 
-    def _update_database(self, study: dict, schema: dict, _table="Study") -> None:
+    def _update_database(
+        self,
+        study: dict,
+        schema: dict,
+        _table="Study",
+        _prev_table=None,
+        _prev_primary=None,
+    ) -> None:
         """
         Recursively update a single study into the database.
 
         Args:
             study (dict): Single processed clinical trials study.
+            schema (dict): Database schema.
+            _table (str, optional): Table name. Defaults to "Study".
+            _prev_table (str, optional): Previous table name. Defaults to None.
+            _prev_primary (str, optional): Previous primary key. Defaults to None.
         """
         columns = []
         values = []
 
+        if not _prev_table:
+            primary = f'"{study["NCTId"]}"'
+        else:
+            # Fetch the last Id inserted.
+            result = self.cursor.execute(
+                f"SELECT Id FROM {_table} ORDER BY Id DESC LIMIT 1"
+            ).fetchone()
+            primary = 1 if not result else result[0] + 1
+
         for field, value in study.items():
             if isinstance(value, list):
                 for entry in value:
-                    try:
-                        self._update_database(entry, schema[field], _table=field)
-                    except KeyError as e:
-                        print(e)
-                        print()
-                        print(field, entry)
+                    self._update_database(
+                        entry,
+                        schema[field],
+                        _table=field,
+                        _prev_table=_table,
+                        _prev_primary=primary,
+                    )
             else:
                 if schema[field] == "TEXT":
                     value = value.replace('"', "\\'").replace("'", "\\'")
@@ -90,9 +114,15 @@ class ClinicalTrials:
                 columns.append(str(field))
                 values.append(str(value))
 
+        if _prev_table:
+            columns.append(_prev_table + "Id")
+            values.append(str(_prev_primary))
+
         query = (
             f"INSERT INTO {_table} ({', '.join(columns)}) VALUES ({', '.join(values)});"
         )
+
+        # Don't insert if columns / values are empty.
         if columns and values:
             self.cursor.execute(query)
             self.connection.commit()
@@ -124,7 +154,7 @@ class ClinicalTrials:
 
         if not _primary:
             _primary = "Id"
-            columns.append(f"{_primary} INTEGER AUTO_INCREMENT PRIMARY KEY")
+            columns.append(f"{_primary} INTEGER PRIMARY KEY")
 
         for field, datatype in schema.items():
             if isinstance(datatype, dict):
@@ -150,7 +180,6 @@ class ClinicalTrials:
 
         query = f"CREATE TABLE IF NOT EXISTS {_table} ({', '.join(columns)});"
         self.cursor.execute(query)
-
         self.connection.commit()
 
     def _load_schema(self) -> dict:
