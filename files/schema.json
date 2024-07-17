@@ -1,0 +1,446 @@
+{
+    "NCTId": "TEXT",
+    "OrgStudyId": "TEXT",
+    "protocolSectionidentificationModulesecondaryIdInfos": {
+        "SecondaryId": "TEXT",
+        "SecondaryIdType": "TEXT",
+        "SecondaryIdDomain": "TEXT",
+        "SecondaryIdLink": "TEXT"
+    },
+    "OrgFullName": "TEXT",
+    "OrgClass": "TEXT",
+    "BriefTitle": "TEXT",
+    "OfficialTitle": "TEXT",
+    "StatusVerifiedDate": "DATE",
+    "OverallStatus": "TEXT",
+    "HasExpandedAccess": "BOOLEAN",
+    "StartDate": "DATE",
+    "PrimaryCompletionDate": "DATE",
+    "PrimaryCompletionDateType": "TEXT",
+    "CompletionDate": "DATE",
+    "CompletionDateType": "TEXT",
+    "StudyFirstSubmitDate": "DATE",
+    "StudyFirstSubmitQCDate": "DATE",
+    "StudyFirstPostDate": "DATE",
+    "StudyFirstPostDateType": "TEXT",
+    "LastUpdateSubmitDate": "DATE",
+    "LastUpdatePostDate": "DATE",
+    "LastUpdatePostDateType": "TEXT",
+    "ResponsiblePartyType": "TEXT",
+    "LeadSponsorName": "TEXT",
+    "LeadSponsorClass": "TEXT",
+    "protocolSectionsponsorCollaboratorsModulecollaborators": {
+        "CollaboratorName": "TEXT",
+        "CollaboratorClass": "TEXT"
+    },
+    "BriefSummary": "TEXT",
+    "DetailedDescription": "TEXT",
+    "Condition": "TEXT",
+    "Keyword": "TEXT",
+    "StudyType": "TEXT",
+    "Phase": "TEXT",
+    "DesignPrimaryPurpose": "TEXT",
+    "DesignMasking": "TEXT",
+    "protocolSectionarmsInterventionsModuleinterventions": {
+        "InterventionType": "TEXT",
+        "InterventionName": "TEXT",
+        "InterventionDescription": "TEXT",
+        "InterventionArmGroupLabel": "TEXT",
+        "InterventionOtherName": "TEXT"
+    },
+    "protocolSectionoutcomesModuleprimaryOutcomes": {
+        "PrimaryOutcomeMeasure": "TEXT",
+        "PrimaryOutcomeTimeFrame": "TEXT",
+        "PrimaryOutcomeDescription": "TEXT"
+    },
+    "protocolSectionoutcomesModulesecondaryOutcomes": {
+        "SecondaryOutcomeMeasure": "TEXT",
+        "SecondaryOutcomeTimeFrame": "TEXT",
+        "SecondaryOutcomeDescription": "TEXT"
+    },
+    "EligibilityCriteria": "TEXT",
+    "HealthyVolunteers": "BOOLEAN",
+    "Sex": "TEXT",
+    "MinimumAge": "TEXT",
+    "MaximumAge": "TEXT",
+    "StdAge": "TEXT",
+    "protocolSectioncontactsLocationsModuleoverallOfficials": {
+        "OverallOfficialName": "TEXT",
+        "OverallOfficialAffiliation": "TEXT",
+        "OverallOfficialRole": "TEXT"
+    },
+    "protocolSectioncontactsLocationsModulelocations": {
+        "LocationFacility": "TEXT",
+        "LocationCity": "TEXT",
+        "LocationState": "TEXT",
+        "LocationZip": "TEXT",
+        "LocationCountry": "TEXT",
+        "LocationStatus": "TEXT",
+        "protocolSectioncontactsLocationsModulelocationscontacts": {
+            "LocationContactName": "TEXT",
+            "LocationContactRole": "TEXT",
+            "LocationContactPhone": "TEXT",
+            "LocationContactEMail": "TEXT",
+            "LocationContactPhoneExt": "TEXT"
+        }
+    },
+    "VersionHolder": "DATE",
+    "derivedSectionconditionBrowseModulemeshes": {
+        "ConditionMeshId": "TEXT",
+        "ConditionMeshTerm": "TEXT"
+    },
+    "derivedSectionconditionBrowseModuleancestors": {
+        "ConditionAncestorId": "TEXT",
+        "ConditionAncestorTerm": "TEXT"
+    },
+    "derivedSectionconditionBrowseModulebrowseLeaves": {
+        "ConditionBrowseLeafId": "TEXT",
+        "ConditionBrowseLeafName": "TEXT",
+        "ConditionBrowseLeafAsFound": "TEXT",
+        "ConditionBrowseLeafRelevance": "TEXT"
+    },
+    "derivedSectionconditionBrowseModulebrowseBranches": {
+        "ConditionBrowseBranchAbbrev": "TEXT",
+        "ConditionBrowseBranchName": "TEXT"
+    },
+    "derivedSectioninterventionBrowseModulemeshes": {
+        "InterventionMeshId": "TEXT",
+        "InterventionMeshTerm": "TEXT"
+    },
+    "derivedSectioninterventionBrowseModuleancestors": {
+        "InterventionAncestorId": "TEXT",
+        "InterventionAncestorTerm": "TEXT"
+    },
+    "derivedSectioninterventionBrowseModulebrowseLeaves": {
+        "InterventionBrowseLeafId": "TEXT",
+        "InterventionBrowseLeafName": "TEXT",
+        "InterventionBrowseLeafAsFound": "TEXT",
+        "InterventionBrowseLeafRelevance": "TEXT"
+    },
+    "derivedSectioninterventionBrowseModulebrowseBranches": {
+        "InterventionBrowseBranchAbbrev": "TEXT",
+        "InterventionBrowseBranchName": "TEXT"
+    },
+    "HasResults": "BOOLEAN",
+    "DesignAllocation": "TEXT",
+    "DesignInterventionModel": "TEXT",
+    "EnrollmentCount": "INTEGER",
+    "EnrollmentType": "TEXT",
+    "OversightHasDMC": "BOOLEAN",
+    "protocolSectionarmsInterventionsModulearmGroups": {
+        "ArmGroupLabel": "TEXT",
+        "ArmGroupType": "TEXT",
+        "ArmGroupDescription": "TEXT",
+        "ArmGroupInterventionName": "TEXT"
+    },
+    "protocolSectionreferencesModulereferences": {
+        "ReferencePMID": "TEXT",
+        "ReferenceType": "TEXT",
+        "ReferenceCitation": "TEXT",
+        "protocolSectionreferencesModulereferencesretractions": {
+            "RetractionPMID": "TEXT",
+            "RetractionSource": "TEXT"
+        }
+    },
+    "StartDateType": "TEXT",
+    "IsFDARegulatedDrug": "BOOLEAN",
+    "IsFDARegulatedDevice": "BOOLEAN",
+    "DesignInterventionModelDescription": "TEXT",
+    "DesignWhoMasked": "TEXT",
+    "IPDSharing": "TEXT",
+    "LastKnownStatus": "TEXT",
+    "DesignMaskingDescription": "TEXT",
+    "WhyStopped": "TEXT",
+    "ResultsFirstSubmitDate": "DATE",
+    "ResultsFirstSubmitQCDate": "DATE",
+    "ResultsFirstPostDate": "DATE",
+    "ResultsFirstPostDateType": "TEXT",
+    "FlowPreAssignmentDetails": "TEXT",
+    "FlowRecruitmentDetails": "TEXT",
+    "resultsSectionparticipantFlowModulegroups": {
+        "FlowGroupId": "TEXT",
+        "FlowGroupTitle": "TEXT",
+        "FlowGroupDescription": "TEXT"
+    },
+    "resultsSectionparticipantFlowModuleperiods": {
+        "FlowPeriodTitle": "TEXT",
+        "resultsSectionparticipantFlowModuleperiodsmilestones": {
+            "FlowMilestoneType": "TEXT",
+            "resultsSectionparticipantFlowModuleperiodsmilestonesachievements": {
+                "FlowAchievementGroupId": "TEXT",
+                "FlowAchievementNumSubjects": "TEXT",
+                "FlowAchievementComment": "TEXT",
+                "FlowAchievementNumUnits": "TEXT"
+            },
+            "FlowMilestoneComment": "TEXT"
+        },
+        "resultsSectionparticipantFlowModuleperiodsdropWithdraws": {
+            "FlowDropWithdrawType": "TEXT",
+            "resultsSectionparticipantFlowModuleperiodsdropWithdrawsreasons": {
+                "FlowReasonGroupId": "TEXT",
+                "FlowReasonNumSubjects": "TEXT"
+            }
+        }
+    },
+    "resultsSectionbaselineCharacteristicsModulegroups": {
+        "BaselineGroupId": "TEXT",
+        "BaselineGroupTitle": "TEXT",
+        "BaselineGroupDescription": "TEXT"
+    },
+    "resultsSectionbaselineCharacteristicsModuledenoms": {
+        "BaselineDenomUnits": "TEXT",
+        "resultsSectionbaselineCharacteristicsModuledenomscounts": {
+            "BaselineDenomCountGroupId": "TEXT",
+            "BaselineDenomCountValue": "TEXT"
+        }
+    },
+    "resultsSectionbaselineCharacteristicsModulemeasures": {
+        "BaselineMeasureTitle": "TEXT",
+        "BaselineMeasureParamType": "TEXT",
+        "BaselineMeasureUnitOfMeasure": "TEXT",
+        "resultsSectionbaselineCharacteristicsModulemeasuresclasses": {
+            "resultsSectionbaselineCharacteristicsModulemeasuresclassescategories": {
+                "BaselineCategoryTitle": "TEXT",
+                "resultsSectionbaselineCharacteristicsModulemeasuresclassescategoriesmeasurements": {
+                    "BaselineMeasurementGroupId": "TEXT",
+                    "BaselineMeasurementValue": "TEXT",
+                    "BaselineMeasurementSpread": "TEXT",
+                    "BaselineMeasurementLowerLimit": "TEXT",
+                    "BaselineMeasurementUpperLimit": "TEXT",
+                    "BaselineMeasurementComment": "TEXT"
+                }
+            },
+            "BaselineClassTitle": "TEXT",
+            "resultsSectionbaselineCharacteristicsModulemeasuresclassesdenoms": {
+                "BaselineClassDenomUnits": "TEXT",
+                "resultsSectionbaselineCharacteristicsModulemeasuresclassesdenomscounts": {
+                    "BaselineClassDenomCountGroupId": "TEXT",
+                    "BaselineClassDenomCountValue": "TEXT"
+                }
+            }
+        },
+        "BaselineMeasureDispersionType": "TEXT",
+        "BaselineMeasurePopulationDescription": "TEXT",
+        "BaselineMeasureDescription": "TEXT",
+        "BaselineMeasureDenomUnitsSelected": "TEXT",
+        "resultsSectionbaselineCharacteristicsModulemeasuresdenoms": {
+            "BaselineMeasureDenomUnits": "TEXT",
+            "resultsSectionbaselineCharacteristicsModulemeasuresdenomscounts": {
+                "BaselineMeasureDenomCountGroupId": "TEXT",
+                "BaselineMeasureDenomCountValue": "TEXT"
+            }
+        },
+        "BaselineMeasureCalculatePct": "BOOLEAN"
+    },
+    "resultsSectionoutcomeMeasuresModuleoutcomeMeasures": {
+        "OutcomeMeasureType": "TEXT",
+        "OutcomeMeasureTitle": "TEXT",
+        "OutcomeMeasureDescription": "TEXT",
+        "OutcomeMeasurePopulationDescription": "TEXT",
+        "OutcomeMeasureReportingStatus": "TEXT",
+        "OutcomeMeasureTimeFrame": "TEXT",
+        "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresgroups": {
+            "OutcomeGroupId": "TEXT",
+            "OutcomeGroupTitle": "TEXT",
+            "OutcomeGroupDescription": "TEXT"
+        },
+        "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresdenoms": {
+            "OutcomeDenomUnits": "TEXT",
+            "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresdenomscounts": {
+                "OutcomeDenomCountGroupId": "TEXT",
+                "OutcomeDenomCountValue": "TEXT"
+            }
+        },
+        "OutcomeMeasureParamType": "TEXT",
+        "OutcomeMeasureDispersionType": "TEXT",
+        "OutcomeMeasureUnitOfMeasure": "TEXT",
+        "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresclasses": {
+            "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresclassescategories": {
+                "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresclassescategoriesmeasurements": {
+                    "OutcomeMeasurementGroupId": "TEXT",
+                    "OutcomeMeasurementValue": "TEXT",
+                    "OutcomeMeasurementSpread": "TEXT",
+                    "OutcomeMeasurementLowerLimit": "TEXT",
+                    "OutcomeMeasurementUpperLimit": "TEXT",
+                    "OutcomeMeasurementComment": "TEXT"
+                },
+                "OutcomeCategoryTitle": "TEXT"
+            },
+            "OutcomeClassTitle": "TEXT",
+            "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresclassesdenoms": {
+                "OutcomeClassDenomUnits": "TEXT",
+                "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresclassesdenomscounts": {
+                    "OutcomeClassDenomCountGroupId": "TEXT",
+                    "OutcomeClassDenomCountValue": "TEXT"
+                }
+            }
+        },
+        "resultsSectionoutcomeMeasuresModuleoutcomeMeasuresanalyses": {
+            "OutcomeAnalysisGroupId": "TEXT",
+            "OutcomeAnalysisTestedNonInferiority": "BOOLEAN",
+            "OutcomeAnalysisNonInferiorityType": "TEXT",
+            "OutcomeAnalysisPValue": "TEXT",
+            "OutcomeAnalysisStatisticalMethod": "TEXT",
+            "OutcomeAnalysisParamType": "TEXT",
+            "OutcomeAnalysisParamValue": "TEXT",
+            "OutcomeAnalysisCIPctValue": "TEXT",
+            "OutcomeAnalysisCINumSides": "TEXT",
+            "OutcomeAnalysisCILowerLimit": "TEXT",
+            "OutcomeAnalysisCIUpperLimit": "TEXT",
+            "OutcomeAnalysisEstimateComment": "TEXT",
+            "OutcomeAnalysisGroupDescription": "TEXT",
+            "OutcomeAnalysisNonInferiorityComment": "TEXT",
+            "OutcomeAnalysisPValueComment": "TEXT",
+            "OutcomeAnalysisDispersionType": "TEXT",
+            "OutcomeAnalysisDispersionValue": "TEXT",
+            "OutcomeAnalysisStatisticalComment": "TEXT",
+            "OutcomeAnalysisOtherAnalysisDescription": "TEXT"
+        },
+        "OutcomeMeasureCalculatePct": "BOOLEAN",
+        "OutcomeMeasureAnticipatedPostingDate": "DATE",
+        "OutcomeMeasureDenomUnitsSelected": "TEXT",
+        "OutcomeMeasureTypeUnitsAnalyzed": "TEXT"
+    },
+    "EventsFrequencyThreshold": "TEXT",
+    "EventsTimeFrame": "TEXT",
+    "EventsDescription": "TEXT",
+    "resultsSectionadverseEventsModuleeventGroups": {
+        "EventGroupId": "TEXT",
+        "EventGroupTitle": "TEXT",
+        "EventGroupDescription": "TEXT",
+        "EventGroupDeathsNumAffected": "INTEGER",
+        "EventGroupDeathsNumAtRisk": "INTEGER",
+        "EventGroupSeriousNumAffected": "INTEGER",
+        "EventGroupSeriousNumAtRisk": "INTEGER",
+        "EventGroupOtherNumAffected": "INTEGER",
+        "EventGroupOtherNumAtRisk": "INTEGER"
+    },
+    "resultsSectionadverseEventsModuleseriousEvents": {
+        "SeriousEventTerm": "TEXT",
+        "SeriousEventOrganSystem": "TEXT",
+        "SeriousEventSourceVocabulary": "TEXT",
+        "SeriousEventAssessmentType": "TEXT",
+        "resultsSectionadverseEventsModuleseriousEventsstats": {
+            "SeriousEventStatsGroupId": "TEXT",
+            "SeriousEventStatsNumAffected": "INTEGER",
+            "SeriousEventStatsNumAtRisk": "INTEGER",
+            "SeriousEventStatsNumEvents": "INTEGER"
+        },
+        "SeriousEventNotes": "TEXT"
+    },
+    "resultsSectionadverseEventsModuleotherEvents": {
+        "OtherEventTerm": "TEXT",
+        "OtherEventOrganSystem": "TEXT",
+        "OtherEventSourceVocabulary": "TEXT",
+        "OtherEventAssessmentType": "TEXT",
+        "resultsSectionadverseEventsModuleotherEventsstats": {
+            "OtherEventStatsGroupId": "TEXT",
+            "OtherEventStatsNumAffected": "INTEGER",
+            "OtherEventStatsNumAtRisk": "INTEGER",
+            "OtherEventStatsNumEvents": "INTEGER"
+        },
+        "OtherEventNotes": "TEXT"
+    },
+    "LimitationsAndCaveatsDescription": "TEXT",
+    "AgreementPISponsorEmployee": "BOOLEAN",
+    "PointOfContactTitle": "TEXT",
+    "PointOfContactOrganization": "TEXT",
+    "PointOfContactEMail": "TEXT",
+    "PointOfContactPhone": "TEXT",
+    "Acronym": "TEXT",
+    "ResponsiblePartyInvestigatorFullName": "TEXT",
+    "ResponsiblePartyInvestigatorTitle": "TEXT",
+    "ResponsiblePartyInvestigatorAffiliation": "TEXT",
+    "GenderBased": "BOOLEAN",
+    "IsUSExport": "BOOLEAN",
+    "IPDSharingDescription": "TEXT",
+    "IPDSharingInfoType": "TEXT",
+    "IPDSharingTimeFrame": "TEXT",
+    "IPDSharingAccessCriteria": "TEXT",
+    "protocolSectioncontactsLocationsModulecentralContacts": {
+        "CentralContactName": "TEXT",
+        "CentralContactRole": "TEXT",
+        "CentralContactPhone": "TEXT",
+        "CentralContactEMail": "TEXT",
+        "CentralContactPhoneExt": "TEXT"
+    },
+    "DesignTimePerspective": "TEXT",
+    "AgreementRestrictionType": "TEXT",
+    "AgreementRestrictiveAgreement": "BOOLEAN",
+    "IPDSharingURL": "TEXT",
+    "GenderDescription": "TEXT",
+    "documentSectionlargeDocumentModulelargeDocs": {
+        "LargeDocTypeAbbrev": "TEXT",
+        "LargeDocHasProtocol": "BOOLEAN",
+        "LargeDocHasSAP": "BOOLEAN",
+        "LargeDocHasICF": "BOOLEAN",
+        "LargeDocLabel": "TEXT",
+        "LargeDocDate": "DATE",
+        "LargeDocUploadDate": "TEXT",
+        "LargeDocFilename": "TEXT",
+        "LargeDocSize": "INTEGER"
+    },
+    "PatientRegistry": "BOOLEAN",
+    "DesignObservationalModel": "TEXT",
+    "StudyPopulation": "TEXT",
+    "SamplingMethod": "TEXT",
+    "protocolSectionoutcomesModuleotherOutcomes": {
+        "OtherOutcomeMeasure": "TEXT",
+        "OtherOutcomeDescription": "TEXT",
+        "OtherOutcomeTimeFrame": "TEXT"
+    },
+    "protocolSectionreferencesModuleseeAlsoLinks": {
+        "SeeAlsoLinkLabel": "TEXT",
+        "SeeAlsoLinkURL": "TEXT"
+    },
+    "ResponsiblePartyOldNameTitle": "TEXT",
+    "ResponsiblePartyOldOrganization": "TEXT",
+    "AgreementOtherDetails": "TEXT",
+    "NCTIdAlias": "TEXT",
+    "BaselinePopulationDescription": "TEXT",
+    "BioSpecRetention": "TEXT",
+    "BioSpecDescription": "TEXT",
+    "TargetDuration": "TEXT",
+    "OrgStudyIdType": "TEXT",
+    "OrgStudyIdLink": "TEXT",
+    "IsUnapprovedDevice": "BOOLEAN",
+    "DispFirstSubmitDate": "DATE",
+    "DispFirstSubmitQCDate": "DATE",
+    "DispFirstPostDate": "DATE",
+    "DispFirstPostDateType": "TEXT",
+    "UnpostedResponsibleParty": "TEXT",
+    "annotationSectionannotationModuleunpostedAnnotationunpostedEvents": {
+        "UnpostedEventType": "TEXT",
+        "UnpostedEventDate": "DATE",
+        "UnpostedEventDateUnknown": "BOOLEAN"
+    },
+    "EstimatedResultsFirstSubmitDate": "DATE",
+    "derivedSectionmiscInfoModulesubmissionTrackingsubmissionInfos": {
+        "SubmissionReleaseDate": "DATE",
+        "SubmissionResetDate": "DATE",
+        "SubmissionMCPReleaseN": "INTEGER",
+        "SubmissionUnreleaseDateUnknown": "BOOLEAN",
+        "SubmissionUnreleaseDate": "DATE"
+    },
+    "RemovedCountry": "TEXT",
+    "FirstMCPPostDate": "DATE",
+    "FirstMCPPostDateType": "TEXT",
+    "protocolSectionreferencesModuleavailIpds": {
+        "AvailIPDType": "TEXT",
+        "AvailIPDURL": "TEXT",
+        "AvailIPDComment": "TEXT",
+        "AvailIPDId": "TEXT"
+    },
+    "DelayedPosting": "BOOLEAN",
+    "ExpandedAccessNCTId": "TEXT",
+    "ExpandedAccessStatusForNCTId": "TEXT",
+    "PointOfContactPhoneExt": "TEXT",
+    "LargeDocNoSAP": "BOOLEAN",
+    "FlowTypeUnitsAnalyzed": "TEXT",
+    "BaselineTypeUnitsAnalyzed": "TEXT",
+    "IsPPSD": "BOOLEAN",
+    "NPtrsToThisExpAccNCTId": "INTEGER",
+    "ExpAccTypeTreatment": "BOOLEAN",
+    "ExpAccTypeIndividual": "BOOLEAN",
+    "ExpAccTypeIntermediate": "BOOLEAN"
+}

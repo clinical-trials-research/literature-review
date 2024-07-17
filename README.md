@@ -1,5 +1,10 @@
 # Literature Review
 
+## Todo
+
+- When generating schema, we want to query around 1000-5000 trials. This might differ from the num_trials specified by the user.
+- Add progress bars when updating database because that takes a while..
+
 ## Installation
 
 ### Install Poetry

@@ -1,7 +1,6 @@
 import json
 import re
 import sqlite3
-from functools import reduce
 from pathlib import Path
 from typing import Generator
 
@@ -78,7 +77,12 @@ class ClinicalTrials:
         for field, value in study.items():
             if isinstance(value, list):
                 for entry in value:
-                    self._update_database(entry, schema[field], _table=field)
+                    try:
+                        self._update_database(entry, schema[field], _table=field)
+                    except KeyError as e:
+                        print(e)
+                        print()
+                        print(field, entry)
             else:
                 if schema[field] == "TEXT":
                     value = value.replace('"', "\\'").replace("'", "\\'")
@@ -89,9 +93,9 @@ class ClinicalTrials:
         query = (
             f"INSERT INTO {_table} ({', '.join(columns)}) VALUES ({', '.join(values)});"
         )
-        print(query)
-        self.cursor.execute(query)
-        self.connection.commit()
+        if columns and values:
+            self.cursor.execute(query)
+            self.connection.commit()
 
     def _create_database(
         self,
@@ -149,10 +153,13 @@ class ClinicalTrials:
 
         self.connection.commit()
 
-    def _load_schema(self) -> None:
+    def _load_schema(self) -> dict:
         """
         Look for schema in given/default directory. If not found, generate and
         load it.
+
+        Returns:
+            dict: The loaded schema.
         """
         schema_path = Path(self.schema_directory)
 
@@ -169,25 +176,28 @@ class ClinicalTrials:
                 )
                 for study in self.get_studies():
                     schema = self._update_schema(study, schema)
-            with open(self.schema_directory, "w") as f:
-                json.dump(schema, f)
+                with open(self.schema_directory, "w") as f:
+                    json.dump(schema, f)
         else:
             with open(self.schema_directory) as f:
                 schema = json.load(f)
         return schema
 
-    def _update_schema(self, study: dict, schema={}) -> None:
+    def _update_schema(self, study: dict, schema=None) -> dict:
         """
         Given a study, update the database schema.
 
         Args:
             study (dict): Clinical trials study.
         """
+        if not schema:
+            schema = {}
+
         for key, value in study.items():
-            if key in schema:
+            if key in schema and not isinstance(value, list):
                 continue
-            elif isinstance(value, str):
-                if re.match(r"\d{4}-\d{2}(-\d{2})?", value):
+            if isinstance(value, str):
+                if re.match(r"^\d{4}-\d{2}(-\d{2})?$", value):
                     schema[key] = "DATE"
                 else:
                     schema[key] = "TEXT"
@@ -197,13 +207,11 @@ class ClinicalTrials:
                 schema[key] = "INTEGER"
             elif isinstance(value, list):
                 # Reduce list of dictionaries to 1 dictionary.
-                schema[key] = self._update_schema(
-                    reduce(lambda a, b: a | b, value), schema.get(key, {})
-                )
+                for entry in value:
+                    schema[key] = self._update_schema(entry, schema.get(key))
             else:
                 raise Exception(f"Woah, weird type: {value}")
             self._in_schema[key] = True
-
         return schema
 
     def _normalize_study(self, study: dict, _parent_key="") -> dict:
@@ -235,7 +243,7 @@ class ClinicalTrials:
 
             # If value is a list of dictionaries, recursively flatten each one.
             elif isinstance(value, list) and all(isinstance(i, dict) for i in value):
-                flattened[_parent_key.replace(".", "")] = [
+                flattened[new_key.replace(".", "")] = [
                     self._normalize_study(i, new_key) for i in value
                 ]
 
