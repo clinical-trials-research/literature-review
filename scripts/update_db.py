@@ -1,5 +1,4 @@
 from litreview import ClinicalTrials
 
-trials = ClinicalTrials(num_studies=100)
-# trials.update_database()
-print(trials.query("NCTId", "BriefTitle"))
+trials = ClinicalTrials(num_studies=100, schema_directory="files/schema.json")
+trials.update_database()

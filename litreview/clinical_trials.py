@@ -23,7 +23,7 @@ class ClinicalTrials:
         *,
         num_studies=1000,
         connection=None,
-        schema_directory="./files/schema.json",
+        schema_directory="schema.json",
     ) -> None:
         """
         Initialize the ClinicalTrials interface.
@@ -45,10 +45,18 @@ class ClinicalTrials:
         self._field_to_piece = self._get_piece_map()
         self._in_schema = {piece: False for piece in self._field_to_piece.values()}
         self._schema = self._load_schema()
+        self._field_to_table = self._create_field_to_table()
 
-    def query(self, *fields):
+    def query(self, *fields) -> list:
+        """
+        Query database for given fields.
+
+        Returns:
+            list: Returns list of results
+        """
+        tables = list(set(self._field_to_table[i] for i in fields))
         results = self.cursor.execute(
-            f'SELECT {", ".join(fields)} FROM Study'
+            f'SELECT {", ".join(fields)} FROM {", ".join(tables)}'
         ).fetchall()
         return results
 
@@ -187,6 +195,27 @@ class ClinicalTrials:
         query = f"CREATE TABLE IF NOT EXISTS {_table} ({', '.join(columns)});"
         self.cursor.execute(query)
         self.connection.commit()
+
+    def _create_field_to_table(self, _table="Study", _schema=None) -> dict:
+        """
+        Recursively create mapping of fields to their table names.
+
+        Args:
+            _table: Current table name.
+            _schema: The current layer of schema.
+
+        Returns:
+            dict: Dictionary mapping fields to their table names.
+        """
+        field_to_table = {}
+        if not _schema:
+            _schema = self._schema
+        for key, value in _schema.items():
+            if isinstance(value, dict):
+                field_to_table |= self._create_field_to_table(key, value)
+            else:
+                field_to_table[key] = _table
+        return field_to_table
 
     def _load_schema(self) -> dict:
         """
