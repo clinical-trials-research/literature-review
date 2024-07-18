@@ -6,6 +6,10 @@
 - Add interface to query by piece name.
 - Don't insert study if it already exists?
 
+## Notebooks
+
+1. [Summary Statistics](./notebooks/01-summary-stats.ipynb)
+
 ## Installation
 
 ### Install Poetry
@@ -25,9 +29,7 @@ cd literature-review
 poetry install
 ```
 
-## Notebooks
-
-1. [Summary Statistics](./notebooks/01-summary-stats.ipynb)
+## Usage
 
 ## Resources
 
