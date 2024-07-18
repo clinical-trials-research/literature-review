@@ -4,6 +4,7 @@
 
 - When generating schema, we want to query around 1000-5000 trials. This might differ from the num_trials specified by the user.
 - Add interface to query by piece name.
+- Don't insert study if it already exists?
 
 ## Installation
 

@@ -46,6 +46,12 @@ class ClinicalTrials:
         self._in_schema = {piece: False for piece in self._field_to_piece.values()}
         self._schema = self._load_schema()
 
+    def query(self, *fields):
+        results = self.cursor.execute(
+            f'SELECT {", ".join(fields)} FROM Study'
+        ).fetchall()
+        return results
+
     def get_studies(self) -> list[dict]:
         """
         Retrieve a list of normalized studies.
