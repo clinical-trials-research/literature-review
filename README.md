@@ -31,6 +31,46 @@ poetry install
 
 ## Usage
 
+### `ClinicalTrials(*, num_studies=1000, connection=None, schema_directory="schema.json")`
+
+- Creates `ClinicalTrials` object which provides an interface for database management.
+
+    ```python
+    from litreview import ClinicalTrials
+
+    trials = ClinicalTrials()
+    ```
+
+#### Parameters
+
+- `num_studies` - Number of studies to retrieve in each call to `update_database` or `get_studies`.
+- `connection` - Database connection. If not specified, creates new one.
+- `schema_directory` - Schema to use. If not specified, creates a schema.
+
+### `ClinicalTrials.query(*fields)`
+
+- Query the database for the specified fields
+
+    ```python
+    trials.query("NCTId", "BriefDescription")
+    ```
+
+### `ClinicalTrials.update_database()`
+
+- Update the database with `num_studies` number of studies.
+
+    ```python
+    trials.update_database()
+    ```
+
+### `ClinicalTrials.get_studies()`
+
+- Retrieve `num_studies` number of studies in a list.
+
+    ```python
+    studies = trials.get_studies()
+    ```
+
 ## Resources
 
 - [Clinical Trials API](https://clinicaltrials.gov/data-api/api)
