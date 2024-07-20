@@ -218,7 +218,7 @@ class ClinicalTrials:
                 field_to_table[key] = _table
         return field_to_table
 
-    def _load_schema(self) -> dict:
+    def _load_schema(self, num_fields=81) -> dict:
         """
         Look for schema in given/default directory. If not found, generate and
         load it.
@@ -232,10 +232,9 @@ class ClinicalTrials:
         if not schema_path.is_file():
             # Keep updating until all the fields have been added to the schema.
             schema = {}
-            while not all(self._in_schema.values()):
-                fields_remaining = len(
-                    [key for key, value in self._in_schema.items() if not value]
-                )
+            fields_remaining = len(self._in_schema) - sum(self._in_schema.values())
+            while fields_remaining > num_fields:
+                fields_remaining = len(self._in_schema) - sum(self._in_schema.values())
                 print(
                     f"Fields remaining to be updated to the schema: {fields_remaining}"
                 )
