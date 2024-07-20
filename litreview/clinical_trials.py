@@ -38,8 +38,9 @@ class ClinicalTrials:
         """
         self.num_studies = num_studies
         self.schema_directory = schema_directory
-        if not connection:
-            self.connection = sqlite3.connect("clinical_trials.db")
+        self.connection = (
+            connection if connection else sqlite3.connect("clinical_trials.db")
+        )
         self.cursor = self.connection.cursor()
         self._studies_generator = self._create_studies_generator()
         self._field_to_piece = self._get_piece_map()
