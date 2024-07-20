@@ -142,15 +142,36 @@
             "RetractionSource": "TEXT"
         }
     },
+    "Acronym": "TEXT",
+    "WhyStopped": "TEXT",
+    "DesignObservationalModel": "TEXT",
+    "DesignTimePerspective": "TEXT",
+    "BioSpecRetention": "TEXT",
+    "BioSpecDescription": "TEXT",
+    "StudyPopulation": "TEXT",
+    "SamplingMethod": "TEXT",
+    "protocolSectionreferencesModuleseeAlsoLinks": {
+        "SeeAlsoLinkLabel": "TEXT",
+        "SeeAlsoLinkURL": "TEXT"
+    },
     "StartDateType": "TEXT",
+    "ResponsiblePartyInvestigatorFullName": "TEXT",
+    "ResponsiblePartyInvestigatorTitle": "TEXT",
+    "ResponsiblePartyInvestigatorAffiliation": "TEXT",
     "IsFDARegulatedDrug": "BOOLEAN",
     "IsFDARegulatedDevice": "BOOLEAN",
+    "IsUSExport": "BOOLEAN",
     "DesignInterventionModelDescription": "TEXT",
     "DesignWhoMasked": "TEXT",
+    "protocolSectioncontactsLocationsModulecentralContacts": {
+        "CentralContactName": "TEXT",
+        "CentralContactRole": "TEXT",
+        "CentralContactPhone": "TEXT",
+        "CentralContactEMail": "TEXT",
+        "CentralContactPhoneExt": "TEXT"
+    },
     "IPDSharing": "TEXT",
-    "LastKnownStatus": "TEXT",
-    "DesignMaskingDescription": "TEXT",
-    "WhyStopped": "TEXT",
+    "IPDSharingDescription": "TEXT",
     "ResultsFirstSubmitDate": "DATE",
     "ResultsFirstSubmitQCDate": "DATE",
     "ResultsFirstPostDate": "DATE",
@@ -220,8 +241,9 @@
             }
         },
         "BaselineMeasureDispersionType": "TEXT",
-        "BaselineMeasurePopulationDescription": "TEXT",
         "BaselineMeasureDescription": "TEXT",
+        "BaselineMeasurePopulationDescription": "TEXT",
+        "BaselineMeasureCalculatePct": "BOOLEAN",
         "BaselineMeasureDenomUnitsSelected": "TEXT",
         "resultsSectionbaselineCharacteristicsModulemeasuresdenoms": {
             "BaselineMeasureDenomUnits": "TEXT",
@@ -229,8 +251,7 @@
                 "BaselineMeasureDenomCountGroupId": "TEXT",
                 "BaselineMeasureDenomCountValue": "TEXT"
             }
-        },
-        "BaselineMeasureCalculatePct": "BOOLEAN"
+        }
     },
     "resultsSectionoutcomeMeasuresModuleoutcomeMeasures": {
         "OutcomeMeasureType": "TEXT",
@@ -287,19 +308,20 @@
             "OutcomeAnalysisCINumSides": "TEXT",
             "OutcomeAnalysisCILowerLimit": "TEXT",
             "OutcomeAnalysisCIUpperLimit": "TEXT",
-            "OutcomeAnalysisEstimateComment": "TEXT",
             "OutcomeAnalysisGroupDescription": "TEXT",
-            "OutcomeAnalysisNonInferiorityComment": "TEXT",
             "OutcomeAnalysisPValueComment": "TEXT",
+            "OutcomeAnalysisStatisticalComment": "TEXT",
+            "OutcomeAnalysisEstimateComment": "TEXT",
             "OutcomeAnalysisDispersionType": "TEXT",
             "OutcomeAnalysisDispersionValue": "TEXT",
-            "OutcomeAnalysisStatisticalComment": "TEXT",
-            "OutcomeAnalysisOtherAnalysisDescription": "TEXT"
+            "OutcomeAnalysisNonInferiorityComment": "TEXT",
+            "OutcomeAnalysisOtherAnalysisDescription": "TEXT",
+            "OutcomeAnalysisCIUpperLimitComment": "TEXT"
         },
-        "OutcomeMeasureCalculatePct": "BOOLEAN",
         "OutcomeMeasureAnticipatedPostingDate": "DATE",
         "OutcomeMeasureDenomUnitsSelected": "TEXT",
-        "OutcomeMeasureTypeUnitsAnalyzed": "TEXT"
+        "OutcomeMeasureTypeUnitsAnalyzed": "TEXT",
+        "OutcomeMeasureCalculatePct": "BOOLEAN"
     },
     "EventsFrequencyThreshold": "TEXT",
     "EventsTimeFrame": "TEXT",
@@ -347,24 +369,10 @@
     "PointOfContactOrganization": "TEXT",
     "PointOfContactEMail": "TEXT",
     "PointOfContactPhone": "TEXT",
-    "Acronym": "TEXT",
-    "ResponsiblePartyInvestigatorFullName": "TEXT",
-    "ResponsiblePartyInvestigatorTitle": "TEXT",
-    "ResponsiblePartyInvestigatorAffiliation": "TEXT",
     "GenderBased": "BOOLEAN",
-    "IsUSExport": "BOOLEAN",
-    "IPDSharingDescription": "TEXT",
     "IPDSharingInfoType": "TEXT",
     "IPDSharingTimeFrame": "TEXT",
     "IPDSharingAccessCriteria": "TEXT",
-    "protocolSectioncontactsLocationsModulecentralContacts": {
-        "CentralContactName": "TEXT",
-        "CentralContactRole": "TEXT",
-        "CentralContactPhone": "TEXT",
-        "CentralContactEMail": "TEXT",
-        "CentralContactPhoneExt": "TEXT"
-    },
-    "DesignTimePerspective": "TEXT",
     "AgreementRestrictionType": "TEXT",
     "AgreementRestrictiveAgreement": "BOOLEAN",
     "IPDSharingURL": "TEXT",
@@ -381,29 +389,21 @@
         "LargeDocSize": "INTEGER"
     },
     "PatientRegistry": "BOOLEAN",
-    "DesignObservationalModel": "TEXT",
-    "StudyPopulation": "TEXT",
-    "SamplingMethod": "TEXT",
+    "LastKnownStatus": "TEXT",
+    "BaselinePopulationDescription": "TEXT",
+    "AgreementOtherDetails": "TEXT",
+    "TargetDuration": "TEXT",
     "protocolSectionoutcomesModuleotherOutcomes": {
         "OtherOutcomeMeasure": "TEXT",
         "OtherOutcomeDescription": "TEXT",
         "OtherOutcomeTimeFrame": "TEXT"
     },
-    "protocolSectionreferencesModuleseeAlsoLinks": {
-        "SeeAlsoLinkLabel": "TEXT",
-        "SeeAlsoLinkURL": "TEXT"
-    },
     "ResponsiblePartyOldNameTitle": "TEXT",
     "ResponsiblePartyOldOrganization": "TEXT",
-    "AgreementOtherDetails": "TEXT",
     "NCTIdAlias": "TEXT",
-    "BaselinePopulationDescription": "TEXT",
-    "BioSpecRetention": "TEXT",
-    "BioSpecDescription": "TEXT",
-    "TargetDuration": "TEXT",
-    "OrgStudyIdType": "TEXT",
-    "OrgStudyIdLink": "TEXT",
     "IsUnapprovedDevice": "BOOLEAN",
+    "PointOfContactPhoneExt": "TEXT",
+    "DesignMaskingDescription": "TEXT",
     "DispFirstSubmitDate": "DATE",
     "DispFirstSubmitQCDate": "DATE",
     "DispFirstPostDate": "DATE",
@@ -422,6 +422,8 @@
         "SubmissionUnreleaseDateUnknown": "BOOLEAN",
         "SubmissionUnreleaseDate": "DATE"
     },
+    "OrgStudyIdType": "TEXT",
+    "OrgStudyIdLink": "TEXT",
     "RemovedCountry": "TEXT",
     "FirstMCPPostDate": "DATE",
     "FirstMCPPostDateType": "TEXT",
@@ -432,15 +434,23 @@
         "AvailIPDId": "TEXT"
     },
     "DelayedPosting": "BOOLEAN",
+    "FlowTypeUnitsAnalyzed": "TEXT",
+    "LargeDocNoSAP": "BOOLEAN",
+    "NPtrsToThisExpAccNCTId": "INTEGER",
+    "ExpAccTypeIndividual": "BOOLEAN",
+    "BaselineTypeUnitsAnalyzed": "TEXT",
     "ExpandedAccessNCTId": "TEXT",
     "ExpandedAccessStatusForNCTId": "TEXT",
-    "PointOfContactPhoneExt": "TEXT",
-    "LargeDocNoSAP": "BOOLEAN",
-    "FlowTypeUnitsAnalyzed": "TEXT",
-    "BaselineTypeUnitsAnalyzed": "TEXT",
+    "ExpAccTypeIntermediate": "BOOLEAN",
     "IsPPSD": "BOOLEAN",
-    "NPtrsToThisExpAccNCTId": "INTEGER",
     "ExpAccTypeTreatment": "BOOLEAN",
-    "ExpAccTypeIndividual": "BOOLEAN",
-    "ExpAccTypeIntermediate": "BOOLEAN"
+    "FDAAA801Violation": "BOOLEAN",
+    "annotationSectionannotationModuleviolationAnnotationviolationEvents": {
+        "ViolationEventType": "TEXT",
+        "ViolationEventDescription": "TEXT",
+        "ViolationEventCreationDate": "DATE",
+        "ViolationEventIssuedDate": "DATE",
+        "ViolationEventReleaseDate": "DATE",
+        "ViolationEventPostedDate": "DATE"
+    }
 }
