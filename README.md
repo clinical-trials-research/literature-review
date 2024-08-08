@@ -70,5 +70,6 @@ poetry install
 
 ### NLP
 
+- [What is an embedding?](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/)
 - [HuggingFace NLP Tutorial](https://huggingface.co/learn/nlp-course/chapter1/1)
 - [BERT Embeddings Tutorial](https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/#3-extracting-embeddings)
