@@ -7,8 +7,9 @@
 
 ## Notebooks
 
-1. [Summary Statistics](./notebooks/01-summary-stats.ipynb)
-2. [Embeddings](./notebooks/02-embeddings.ipynb)
+1. [NLP Notes](./notebooks/00-nlp-notes.ipynb)
+2. [Summary Statistics](./notebooks/01-summary-stats.ipynb)
+3. [Embeddings](./notebooks/02-embeddings.ipynb)
 
 ## Installation
 
