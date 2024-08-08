@@ -62,5 +62,12 @@ poetry install
 
 ## Resources
 
+### Clinical Trials
+
 - [Clinical Trials API](https://clinicaltrials.gov/data-api/api)
 - [Clinical Trials Field Definitions](https://clinicaltrials.gov/data-api/about-api/study-data-structure)
+
+### NLP
+
+- [HuggingFace NLP Tutorial](https://huggingface.co/learn/nlp-course/chapter1/1)
+- [BERT Embeddings Tutorial](https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/#3-extracting-embeddings)
