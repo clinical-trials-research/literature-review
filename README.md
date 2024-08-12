@@ -10,6 +10,7 @@
 1. [NLP Notes](./notebooks/00-nlp-notes.ipynb)
 2. [Summary Statistics](./notebooks/01-summary-stats.ipynb)
 3. [Embeddings](./notebooks/02-embeddings.ipynb)
+4. [Clustering](./notebooks/03-clustering.ipynb)
 
 ## Installation
 
