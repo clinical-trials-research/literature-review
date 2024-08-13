@@ -20,6 +20,7 @@ torchvision = "^0.19.0"
 torchaudio = "^2.4.0"
 scipy = "^1.14.0"
 bertopic = "^0.16.3"
+sentence-transformers = "^3.0.1"
 
 
 [build-system]
