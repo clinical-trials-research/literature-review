@@ -1,0 +1,10 @@
+{
+    "NCTId": "TEXT",
+    "BriefTitle": "TEXT",
+    "OfficialTitle": "TEXT",
+    "BriefSummary": "TEXT",
+    "DetailedDescription": "TEXT",
+    "Condition": "TEXT",
+    "Keyword": "TEXT",
+    "StudyType": "TEXT"
+}
