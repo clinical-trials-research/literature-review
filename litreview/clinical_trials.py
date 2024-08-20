@@ -1,4 +1,5 @@
 import json
+import logging
 import re
 import sqlite3
 from pathlib import Path
@@ -113,6 +114,10 @@ class ClinicalTrials:
             primary = 1 if not result else result[0] + 1
 
         for field, value in study.items():
+            if field not in schema:
+                logging.info(f"Skipping field: {field}")
+                continue
+
             if isinstance(value, list):
                 for entry in value:
                     self._update_database(
