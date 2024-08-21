@@ -11,6 +11,7 @@
 1. [NLP Notes](./notebooks/00-nlp-notes.ipynb)
 2. [Summary Statistics](./notebooks/01-summary-stats.ipynb)
 3. [Embeddings](./notebooks/02-embeddings.ipynb)
+4. [Vector Database](./notebooks/03-vector-database.ipynb)
 
 ## Installation
 
