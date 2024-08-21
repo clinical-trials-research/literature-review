@@ -129,8 +129,8 @@ class ClinicalTrials:
                     )
             else:
                 if schema[field] == "TEXT":
-                    value = value.replace('"', "\\'").replace("'", "\\'")
-                    value = f'"{value}"'
+                    value = value.replace("'", "''")
+                    value = f"'{value}'"
                 columns.append(str(field))
                 values.append(str(value))
 
